@@ -123,7 +123,7 @@ export const projectsData: ProjectItem[] = [
     description:
       "A high-availability on-demand service ecosystem delivering instant multi-city booking across Islamabad, Karachi, and Lahore with background-verified professionals, transparent upfront pricing, recurring maintenance calendars, and dedicated Mahir for Business operations.",
     image: "/images/mahir-company-platform.jpg",
-    url: "https://mahircompany.com",
+    url: "https://mahir-gold.vercel.app",
     technologies: ["WordPress", "Custom PHP", "WooCommerce", "REST API", "Tailwind CSS"],
     services: [
       "Multi-City Booking Architecture",
