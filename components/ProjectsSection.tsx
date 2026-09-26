@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function ProjectsSection() {
   return (
     <section className="section work" id="work" aria-labelledby="work-heading">
+      <div id="case-studies" className="scroll-mt-24 pointer-events-none" aria-hidden="true" />
       <div className="section-shell">
         <Reveal>
           <div className="section-label">

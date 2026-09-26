@@ -54,6 +54,10 @@
       --border: rgba(20, 23, 22, 0.08);
       --container: 1200px;
     }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
     body {
       background-color: var(--bg);
       color: var(--text);
@@ -504,11 +508,113 @@
       </div>
     </section>
 
+    <!-- ========================================================= -->
+    <!-- 2.5 CORE CAPABILITIES & SERVICES -->
+    <!-- ========================================================= -->
+    <section id="services" class="py-20 lg:py-24 border-t border-stone-200/80 bg-white" aria-labelledby="services-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 border border-emerald-200 mb-3">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+            Core Capabilities
+          </div>
+          <h2 id="services-heading" class="text-3xl sm:text-4xl font-black tracking-tight text-stone-900 leading-tight">
+            Focused engineering for business and e-commerce websites.
+          </h2>
+          <p class="mt-3 text-base sm:text-lg text-stone-600 leading-relaxed">
+            I combine custom WordPress development, WooCommerce architecture, and targeted AI tools to build websites that load fast, remain easy to manage, and support business growth.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Service 1 -->
+          <article class="p-6 sm:p-8 rounded-2xl border border-stone-200/90 bg-[#fbfaf8] hover:border-emerald-700/30 hover:shadow-lg transition-all duration-300">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/60">01</span>
+              <div class="h-10 w-10 rounded-xl bg-white border border-stone-200 flex items-center justify-center text-emerald-800 shadow-xs">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-stone-900 mb-2">Custom WordPress Engineering</h3>
+            <p class="text-sm text-stone-600 leading-relaxed mb-6">
+              Bespoke WordPress development built with clean PHP template architecture, structured CMS schemas, and maintainable block or Elementor components.
+            </p>
+            <ul class="space-y-2.5 text-xs text-stone-700 font-medium border-t border-stone-200/70 pt-4">
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Custom theme architecture & template hierarchy</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Dynamic post types & custom fields (ACF / JetEngine)</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Reusable block & Elementor Pro development</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Clean code architecture & security hardening</li>
+            </ul>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="p-6 sm:p-8 rounded-2xl border border-stone-200/90 bg-[#fbfaf8] hover:border-emerald-700/30 hover:shadow-lg transition-all duration-300">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/60">02</span>
+              <div class="h-10 w-10 rounded-xl bg-white border border-stone-200 flex items-center justify-center text-emerald-800 shadow-xs">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-stone-900 mb-2">Pragmatic AI & API Solutions</h3>
+            <p class="text-sm text-stone-600 leading-relaxed mb-6">
+              Integrating practical, business-focused AI tools into web workflows—from automated lead qualification to intelligent on-site search and customer routing.
+            </p>
+            <ul class="space-y-2.5 text-xs text-stone-700 font-medium border-t border-stone-200/70 pt-4">
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Custom AI chatbot & lead qualification workflows</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>OpenAI API integrations & automated routing</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>AI-enhanced catalog & content search</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Webhook integrations with CRMs & automation tools</li>
+            </ul>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="p-6 sm:p-8 rounded-2xl border border-stone-200/90 bg-[#fbfaf8] hover:border-emerald-700/30 hover:shadow-lg transition-all duration-300">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/60">03</span>
+              <div class="h-10 w-10 rounded-xl bg-white border border-stone-200 flex items-center justify-center text-emerald-800 shadow-xs">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-stone-900 mb-2">WooCommerce E-Commerce Stores</h3>
+            <p class="text-sm text-stone-600 leading-relaxed mb-6">
+              High-speed e-commerce stores designed for high-intent shopping, friction-free checkout flows, and custom inventory or product configuration logic.
+            </p>
+            <ul class="space-y-2.5 text-xs text-stone-700 font-medium border-t border-stone-200/70 pt-4">
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Streamlined single-page & multi-step checkouts</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Custom catalog filtering & product attribute schemas</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Payment gateway, tax, and shipping integrations</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Mobile shopping speed & cart optimization</li>
+            </ul>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="p-6 sm:p-8 rounded-2xl border border-stone-200/90 bg-[#fbfaf8] hover:border-emerald-700/30 hover:shadow-lg transition-all duration-300">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/60">04</span>
+              <div class="h-10 w-10 rounded-xl bg-white border border-stone-200 flex items-center justify-center text-emerald-800 shadow-xs">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-stone-900 mb-2">Core Web Vitals & Technical SEO</h3>
+            <p class="text-sm text-stone-600 leading-relaxed mb-6">
+              Rigorous Core Web Vitals optimization, speed audits, semantic HTML architecture, structured data schemas, and clean search engine crawl paths.
+            </p>
+            <ul class="space-y-2.5 text-xs text-stone-700 font-medium border-t border-stone-200/70 pt-4">
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Core Web Vitals remediation (LCP, CLS, INP)</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Comprehensive Schema.org JSON-LD structured data</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Asset minification, caching & database optimization</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Technical SEO auditing & clean crawl paths</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <!-- ========================================================= -->
     <!-- 3. 4 CASE STUDY PROJECT CARDS WITH MODERN BROWSER MOCKUPS -->
     <!-- ========================================================= -->
     <section id="work" class="py-20 lg:py-28 border-t border-stone-200/80 bg-surface-base">
+      <div id="case-studies" class="scroll-mt-24 pointer-events-none" aria-hidden="true"></div>
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-12 sm:mb-16">
@@ -888,6 +994,193 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 3.5 DELIVERY PROCESS ROADMAP -->
+    <!-- ========================================================= -->
+    <section id="process" class="py-20 lg:py-24 border-t border-stone-200/80 bg-white" aria-labelledby="process-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 border border-emerald-200 mb-3">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+            Delivery Process
+          </div>
+          <h2 id="process-heading" class="text-3xl sm:text-4xl font-black tracking-tight text-stone-900 leading-tight">
+            Clarity before code. Disciplined execution after.
+          </h2>
+          <p class="mt-3 text-base sm:text-lg text-stone-600 leading-relaxed">
+            A transparent, step-by-step engineering roadmap keeps business strategy, design decisions, and technical implementation closely aligned from kickoff to deployment.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-6">
+          <div class="p-5 sm:p-6 rounded-2xl border border-stone-200/80 bg-[#fbfaf8] relative">
+            <span class="font-mono text-2xl font-black text-emerald-800/25 block mb-2">01</span>
+            <h3 class="text-base font-bold text-stone-900 mb-2">Discovery & Scope</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              We clarify business goals, content requirements, technical constraints, and measurable specifications before writing code.
+            </p>
+          </div>
+          <div class="p-5 sm:p-6 rounded-2xl border border-stone-200/80 bg-[#fbfaf8] relative">
+            <span class="font-mono text-2xl font-black text-emerald-800/25 block mb-2">02</span>
+            <h3 class="text-base font-bold text-stone-900 mb-2">Information Architecture</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Sitemap modeling, database fields, content hierarchy, conversion paths, and component specifications are mapped out.
+            </p>
+          </div>
+          <div class="p-5 sm:p-6 rounded-2xl border border-stone-200/80 bg-[#fbfaf8] relative">
+            <span class="font-mono text-2xl font-black text-emerald-800/25 block mb-2">03</span>
+            <h3 class="text-base font-bold text-stone-900 mb-2">Interface Design</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              A clean visual system with intuitive typography, mobile-first responsive states, and accessible interaction patterns.
+            </p>
+          </div>
+          <div class="p-5 sm:p-6 rounded-2xl border border-stone-200/80 bg-[#fbfaf8] relative">
+            <span class="font-mono text-2xl font-black text-emerald-800/25 block mb-2">04</span>
+            <h3 class="text-base font-bold text-stone-900 mb-2">Clean Implementation</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Production-grade WordPress build with clean PHP code, secure dependencies, API integrations, and accessibility.
+            </p>
+          </div>
+          <div class="p-5 sm:p-6 rounded-2xl border border-stone-200/80 bg-[#fbfaf8] relative">
+            <span class="font-mono text-2xl font-black text-emerald-800/25 block mb-2">05</span>
+            <h3 class="text-base font-bold text-stone-900 mb-2">Audit & Deployment</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Cross-device browser verification, Core Web Vitals profiling, technical SEO checklist validation, and deployment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 3.6 ABOUT ZEESHAN & ENGINEERING PRINCIPLES -->
+    <!-- ========================================================= -->
+    <section id="about" class="py-20 lg:py-24 border-t border-stone-200/80 bg-[#f8f7f4]" aria-labelledby="about-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 border border-emerald-200 mb-3">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+              About Zeeshan
+            </div>
+            <h2 id="about-heading" class="text-3xl sm:text-4xl font-black tracking-tight text-stone-900 leading-tight">
+              Direct collaboration with the engineer writing your code.
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-stone-700 leading-relaxed">
+              I'm Zeeshan, an independent web developer specializing in custom WordPress builds, WooCommerce stores, and pragmatic AI web integrations.
+            </p>
+            <p class="mt-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+              Rather than working through account managers or relying on bloated off-the-shelf themes, I collaborate directly with founders, business owners, and digital agencies. This ensures technical choices, site speed, and conversion strategy remain directly connected from the first consultation to launch day.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
+                <span class="font-bold text-stone-900 text-sm block">Launch-Ready</span>
+                <span class="text-xs text-stone-500 mt-1 block">Maintainability, security, and load speed from day one.</span>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
+                <span class="font-bold text-stone-900 text-sm block">Calm Systems</span>
+                <span class="text-xs text-stone-500 mt-1 block">Hierarchy and typography that guide without overwhelming.</span>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
+                <span class="font-bold text-stone-900 text-sm block">Practical Value</span>
+                <span class="text-xs text-stone-500 mt-1 block">Complexity added only when it improves user workflows.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
+            <h3 class="text-lg font-bold text-stone-900 mb-4 pb-3 border-b border-stone-100">Engineering Standards</h3>
+            <ul class="space-y-3.5 text-xs text-stone-700 font-medium">
+              <li class="flex items-center gap-2.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Custom WordPress & PHP Development</li>
+              <li class="flex items-center gap-2.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Strategic UX & Conversion Architecture</li>
+              <li class="flex items-center gap-2.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Core Web Vitals & Speed Optimization</li>
+              <li class="flex items-center gap-2.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Technical SEO & Schema Integration</li>
+              <li class="flex items-center gap-2.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Pragmatic AI & API Integrations</li>
+              <li class="flex items-center gap-2.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Modular Component & Design Systems</li>
+            </ul>
+
+            <div class="mt-6 pt-5 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+              <span>Location: Worldwide / PK</span>
+              <span class="font-semibold text-emerald-800">Available for Select Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 3.7 FREQUENTLY ASKED QUESTIONS (FAQ) -->
+    <!-- ========================================================= -->
+    <section id="faq" class="py-20 lg:py-24 border-t border-stone-200/80 bg-white" aria-labelledby="faq-heading">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 border border-emerald-200 mb-3">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+            Frequently Asked Questions
+          </div>
+          <h2 id="faq-heading" class="text-3xl sm:text-4xl font-black tracking-tight text-stone-900 leading-tight">
+            Answers to common project inquiries.
+          </h2>
+          <p class="mt-3 text-base sm:text-lg text-stone-600 leading-relaxed">
+            Before starting an engagement, here are common clarifications on fit, stack, and collaboration processes.
+          </p>
+        </div>
+
+        <div class="space-y-4 max-w-4xl">
+          <details class="group rounded-2xl border border-stone-200/90 bg-[#fbfaf8] p-5 sm:p-6 transition-all duration-200 open:bg-white open:shadow-md">
+            <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-bold text-stone-900 list-none">
+              <span>What types of projects are the best fit for your services?</span>
+              <span class="ml-4 flex h-7 w-7 items-center justify-center rounded-full bg-stone-100 group-open:rotate-45 transition-transform duration-200 text-stone-600 font-normal">+</span>
+            </summary>
+            <p class="mt-4 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              Custom WordPress theme builds, WooCommerce e-commerce stores, website speed and Core Web Vitals remediation, and practical AI integrations. I work best with businesses, founders, and digital agencies who value clean code, maintainability, and direct communication.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-stone-200/90 bg-[#fbfaf8] p-5 sm:p-6 transition-all duration-200 open:bg-white open:shadow-md">
+            <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-bold text-stone-900 list-none">
+              <span>How do you handle international collaboration and communication?</span>
+              <span class="ml-4 flex h-7 w-7 items-center justify-center rounded-full bg-stone-100 group-open:rotate-45 transition-transform duration-200 text-stone-600 font-normal">+</span>
+            </summary>
+            <p class="mt-4 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              I work smoothly with remote clients across time zones. Projects are managed with clear milestone updates, asynchronous video walkthroughs (Loom), structured documentation, and scheduled calls for key milestone reviews.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-stone-200/90 bg-[#fbfaf8] p-5 sm:p-6 transition-all duration-200 open:bg-white open:shadow-md">
+            <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-bold text-stone-900 list-none">
+              <span>Can you redesign an existing WordPress website without losing SEO rankings?</span>
+              <span class="ml-4 flex h-7 w-7 items-center justify-center rounded-full bg-stone-100 group-open:rotate-45 transition-transform duration-200 text-stone-600 font-normal">+</span>
+            </summary>
+            <p class="mt-4 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              Yes. I audit your existing URL structure, preserve 301 redirect mappings, protect established meta tags and schema, and rebuild the front-end code and UX without causing indexing drops or downtime.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-stone-200/90 bg-[#fbfaf8] p-5 sm:p-6 transition-all duration-200 open:bg-white open:shadow-md">
+            <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-bold text-stone-900 list-none">
+              <span>What is your revision and feedback process during a project?</span>
+              <span class="ml-4 flex h-7 w-7 items-center justify-center rounded-full bg-stone-100 group-open:rotate-45 transition-transform duration-200 text-stone-600 font-normal">+</span>
+            </summary>
+            <p class="mt-4 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              Each phase includes structured review rounds. You review functional staging links and provide feedback before we move to the next phase, ensuring alignment before final deployment.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-stone-200/90 bg-[#fbfaf8] p-5 sm:p-6 transition-all duration-200 open:bg-white open:shadow-md">
+            <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-bold text-stone-900 list-none">
+              <span>Do you provide ongoing maintenance and technical support after launch?</span>
+              <span class="ml-4 flex h-7 w-7 items-center justify-center rounded-full bg-stone-100 group-open:rotate-45 transition-transform duration-200 text-stone-600 font-normal">+</span>
+            </summary>
+            <p class="mt-4 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              Yes. I provide post-launch maintenance options covering WordPress core and plugin updates, security monitoring, database optimization, regular backups, and technical support as your site grows.
+            </p>
+          </details>
         </div>
       </div>
     </section>
@@ -1287,13 +1580,16 @@
         if (w === 0 || h === 0) return;
         camera.aspect = w / h;
         if (w < 400) {
-          camera.position.z = 36;
+          camera.position.z = 40;
           worldGroup.scale.set(0.85, 0.85, 0.85);
         } else if (w < 600) {
-          camera.position.z = 32;
-          worldGroup.scale.set(0.95, 0.95, 0.95);
+          camera.position.z = 38;
+          worldGroup.scale.set(0.92, 0.92, 0.92);
+        } else if (w < 900) {
+          camera.position.z = 36;
+          worldGroup.scale.set(0.98, 0.98, 0.98);
         } else {
-          camera.position.z = 30;
+          camera.position.z = 35;
           worldGroup.scale.set(1.0, 1.0, 1.0);
         }
         camera.updateProjectionMatrix();
@@ -1338,6 +1634,28 @@
       }
       animate();
     })();
+  </script>
+
+  <!-- Smooth Scrolling With Offset for Header Nav Links -->
+  <script>
+    document.querySelectorAll('.desktop-nav a, .site-header .brand, a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('http')) return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerOffset = 84;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          window.history.pushState(null, '', href);
+        }
+      });
+    });
   </script>
 </body>
 </html>

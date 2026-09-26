@@ -40,6 +40,30 @@ export function Header() {
     };
   }, [mobileMenuOpen]);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    if (href === "#home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.pushState(null, "", "#home");
+      return;
+    }
+
+    const targetId = href.replace("#", "");
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      const headerOffset = 84;
+      const elementPosition = elem.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <>
       <motion.div
@@ -50,7 +74,12 @@ export function Header() {
 
       <header className={`site-header ${mobileMenuOpen ? "menu-is-open" : ""}`}>
         <div className="header-shell">
-          <a className="brand" href="#home" aria-label={`${siteConfig.name} - Back to top`}>
+          <a
+            className="brand"
+            href="#home"
+            onClick={(e) => handleNavClick(e, "#home")}
+            aria-label={`${siteConfig.name} - Back to top`}
+          >
             <span className="brand-mark" aria-hidden="true">Z</span>
             <span className="brand-copy">
               Zeeshan<span>.ws</span>
@@ -59,7 +88,11 @@ export function Header() {
 
           <nav className="desktop-nav" aria-label="Primary site navigation">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href}>
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+              >
                 {link.label}
               </a>
             ))}
@@ -119,7 +152,7 @@ export function Header() {
                       <a
                         key={link.href}
                         href={link.href}
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={(e) => handleNavClick(e, link.href)}
                       >
                         {link.label}
                       </a>
