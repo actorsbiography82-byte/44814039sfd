@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zeeshan Web Solution | WordPress & AI Website Developer</title>
-  <meta name="description" content="Custom WordPress websites, WooCommerce stores, and AI-enabled web workflows for founders and digital agencies worldwide.">
+  <meta name="description" content="I engineer custom WordPress websites, WooCommerce stores, and AI-enabled web workflows for founders, businesses, and digital agencies worldwide.">
   
-  <!-- Google Fonts -->
+  <!-- Favicon / Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -39,50 +39,344 @@
     }
   </script>
 
-  <!-- Three.js CDN for 3D Hero Experience -->
+  <!-- Three.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
+    :root {
+      --bg: #f8f7f4;
+      --surface: #ffffff;
+      --ink: #141716;
+      --text: #2d3431;
+      --text-muted: #59635e;
+      --accent: #285141;
+      --accent-hover: #1e3e32;
+      --border: rgba(20, 23, 22, 0.08);
+      --container: 1200px;
+    }
     body {
-      background-color: #f8f7f4;
-      color: #141716;
+      background-color: var(--bg);
+      color: var(--text);
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
+      margin: 0;
     }
-    .canvas-vignette {
-      background: radial-gradient(ellipse at center, rgba(248, 247, 244, 0) 30%, rgba(248, 247, 244, 0.75) 80%, rgba(248, 247, 244, 0.98) 100%);
+    .section-shell, .header-shell {
+      width: min(calc(100% - 48px), var(--container));
+      margin-inline: auto;
+    }
+    /* Exact Header Classes */
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      top: 16px;
+      left: 0;
+      right: 0;
+    }
+    .header-shell {
+      min-height: 64px;
+      padding: 0 12px 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(248, 247, 244, 0.94);
+      box-shadow: 0 8px 32px rgba(20, 23, 22, 0.05);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(40, 81, 65, 0.2);
+    }
+    .brand-copy {
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .brand-copy span {
+      color: var(--accent);
+    }
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .desktop-nav a {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      font-weight: 550;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .desktop-nav a:hover {
+      color: var(--ink);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #e8f0eb;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .availability i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+      display: inline-block;
+    }
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 18px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(40, 81, 65, 0.2);
+    }
+    .header-cta:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    /* Contact Section Exact Classes */
+    .contact-section {
+      padding: 100px 0;
+      background: #141716;
+      color: #f3f6f4;
+      text-align: center;
+    }
+    .contact-shell {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .contact-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: #9ba6a0;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .contact-kicker span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      display: inline-block;
+    }
+    .contact-section h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(34px, 4.8vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+    .contact-section h2 span {
+      color: #9ac2af;
+    }
+    .contact-section p {
+      max-width: 620px;
+      margin: 20px auto 0;
+      color: #9ba6a0;
+      font-size: 16.5px;
+      line-height: 1.7;
+    }
+    .contact-actions {
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .contact-btn-primary {
+      background: #f8f7f4;
+      color: #141716;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      min-height: 48px;
+      padding: 0 28px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .contact-btn-primary:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+    .contact-direct-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .contact-direct-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #8e9b94;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .contact-direct-link:hover {
+      color: #ffffff;
+    }
+    /* Footer Exact Classes */
+    .footer {
+      padding: 56px 0 32px;
+      background: #0f1211;
+      color: #8e9b94;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    .footer-brand {
+      margin-bottom: 16px;
+    }
+    .footer-brand .brand-copy {
+      color: #ffffff;
+    }
+    .footer-desc {
+      max-width: 380px;
+      margin: 0;
+      font-size: 14px;
+      color: #9ba6a0;
+      line-height: 1.65;
+    }
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+    }
+    .footer-links-column {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .footer-links-column span {
+      margin-bottom: 6px;
+      color: #8e9b94;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .footer-links-column a {
+      color: #a2ada7;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-links-column a:hover {
+      color: #ffffff;
+    }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 24px;
+      font-size: 13px;
+      color: #7a8580;
+    }
+    @media (max-width: 768px) {
+      .desktop-nav, .availability { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
   </style>
 </head>
 <body class="antialiased">
 
   <!-- ========================================================= -->
-  <!-- TOP NAVIGATION HEADER -->
+  <!-- 1. EXACT ORIGINAL SITE HEADER STRUCTURE -->
   <!-- ========================================================= -->
-  <header class="sticky top-0 z-50 w-full border-b border-stone-200/80 bg-surface-base/85 backdrop-blur-md">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-      <a href="#home" class="flex items-center gap-2.5">
-        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand text-sm font-black text-white shadow-sm">Z</span>
-        <div class="leading-tight">
-          <span class="block text-sm font-extrabold tracking-tight text-stone-900">Zeeshan.ws</span>
-          <span class="block text-[11px] font-medium text-stone-500">WordPress & AI Developer</span>
-        </div>
+  <header class="site-header">
+    <div class="header-shell">
+      <a class="brand" href="#home" aria-label="Zeeshan Web Solution - Back to top">
+        <span class="brand-mark" aria-hidden="true">Z</span>
+        <span class="brand-copy">
+          Zeeshan<span>.ws</span>
+        </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-stone-600">
-        <a href="#home" class="transition-colors hover:text-brand">Overview</a>
-        <a href="#work" class="transition-colors hover:text-brand">Selected Work</a>
-        <a href="#capabilities" class="transition-colors hover:text-brand">Services</a>
-        <a href="#contact" class="transition-colors hover:text-brand">Contact</a>
+      <nav class="desktop-nav" aria-label="Primary site navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <span class="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 border border-emerald-200/80">
-          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Available for Projects
+      <div class="header-actions">
+        <span class="availability">
+          <i aria-hidden="true"></i> Available for Select Projects
         </span>
-        <a href="https://wa.me/923057046739" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-brand px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-hover">
-          Discuss Project
+
+        <a
+          class="header-cta"
+          href="https://wa.me/923057046739"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact Zeeshan on WhatsApp to discuss a project"
+        >
+          Discuss a Project
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </a>
       </div>
     </div>
@@ -90,179 +384,122 @@
 
   <main id="main-content">
     <!-- ========================================================= -->
-    <!-- IMMERSIVE 3D HERO SECTION -->
+    <!-- 2. HERO: DEAD-CENTER PROFILE PICTURE & 3D ORBITING RING -->
     <!-- ========================================================= -->
-    <section id="home" class="relative min-h-[92vh] sm:min-h-screen w-full flex items-center justify-center overflow-hidden pt-20 pb-16 lg:py-24">
+    <section id="home" class="relative min-h-[95vh] sm:min-h-screen w-full flex flex-col justify-center overflow-hidden pt-28 pb-16 lg:py-24">
       
-      <!-- Full-Width Interactive 3D Canvas Container -->
-      <div id="hero-3d-container" class="absolute inset-0 w-full h-full z-0 overflow-hidden cursor-grab active:cursor-grabbing select-none" style="touch-action: none;">
-        <!-- Canvas injected by Three.js below -->
-        <div class="pointer-events-none absolute inset-0 canvas-vignette opacity-70"></div>
+      <!-- 3D Canvas Background Container -->
+      <div id="hero-3d-canvas-container" class="absolute inset-0 w-full h-full z-0 overflow-hidden cursor-grab active:cursor-grabbing select-none" style="touch-action: none;">
+        <!-- Radial vignette -->
+        <div class="pointer-events-none absolute inset-0 opacity-70" style="background: radial-gradient(ellipse at center, rgba(248, 247, 244, 0) 35%, rgba(248, 247, 244, 0.75) 80%, rgba(248, 247, 244, 0.98) 100%);"></div>
         
-        <!-- Live 3D Hint Badge -->
+        <!-- Live status hint -->
         <div class="absolute bottom-5 right-5 sm:bottom-8 sm:right-8 z-20 pointer-events-none">
-          <div class="flex items-center gap-2 rounded-full border border-black/10 bg-white/85 px-3 py-1.5 text-xs font-semibold text-stone-800 shadow-md backdrop-blur-md">
+          <div class="flex items-center gap-2 rounded-full border border-stone-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-stone-800 shadow-md backdrop-blur-md">
             <span class="h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <span>3D Interactive Universe · Drag to rotate</span>
+            <span>Profile Dead-Center · Orbiting WordPress, Elementor, WooCommerce, OpenAI & PHP</span>
           </div>
         </div>
       </div>
 
-      <!-- Atmospheric Top & Bottom Gradients -->
-      <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#f8f7f4] via-[#f8f7f4]/60 to-transparent z-[1]"></div>
+      <!-- Top and bottom lighting gradients -->
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#f8f7f4] via-[#f8f7f4]/60 to-transparent z-[1]"></div>
       <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#f8f7f4] via-[#f8f7f4]/70 to-transparent z-[1]"></div>
 
-      <!-- Tailwind Clean Overlay Content Layer -->
-      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full pointer-events-none">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          <!-- Left Column: Glassmorphic Main Hero Card -->
-          <div class="lg:col-span-7 space-y-6">
-            <div class="pointer-events-auto rounded-3xl border border-stone-200/90 bg-[#f8f7f4]/85 p-6 sm:p-9 lg:p-10 shadow-2xl backdrop-blur-md transition-all hover:shadow-emerald-950/5">
-              
-              <!-- Eyebrow Pill -->
-              <div class="inline-flex items-center gap-2 rounded-full border border-emerald-800/20 bg-emerald-50/80 px-3.5 py-1.5 text-xs font-semibold text-emerald-900 shadow-sm">
-                <svg class="h-3.5 w-3.5 text-emerald-700 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
-                <span>WordPress Development · WooCommerce · AI Integrations</span>
-              </div>
-
-              <!-- Headline -->
-              <h1 class="mt-4 text-3xl sm:text-5xl lg:text-[3.25rem] font-black tracking-tight text-stone-900 leading-[1.12]">
-                Zeeshan Web Solution
-                <span class="block mt-2 text-lg sm:text-2xl font-semibold text-brand font-sans tracking-normal">
-                  WordPress Developer & AI Website Developer
-                </span>
-              </h1>
-
-              <!-- Lead Description -->
-              <p class="mt-4 text-base sm:text-lg leading-relaxed text-stone-700">
-                I engineer bespoke WordPress websites, high-speed WooCommerce stores, and AI-enabled web workflows
-                for founders, businesses, and digital agencies worldwide. Focused on clean code, fast page
-                loads, and clear conversion paths.
-              </p>
-
-              <!-- Action Buttons -->
-              <div class="mt-7 flex flex-wrap items-center gap-3.5">
-                <a href="#work" class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-950/15 transition-all duration-200 hover:bg-brand-hover hover:shadow-xl hover:-translate-y-0.5">
-                  <span>View Selected Work</span>
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </a>
-
-                <a href="https://wa.me/923057046739" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white/95 px-6 py-3.5 text-sm font-semibold text-stone-800 shadow-sm transition-all duration-200 hover:bg-stone-50 hover:border-stone-400 hover:-translate-y-0.5">
-                  <span>Discuss Your Project</span>
-                </a>
-              </div>
-
-              <!-- Proof Capabilities -->
-              <dl class="mt-8 pt-6 border-t border-stone-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4" aria-label="Core capability areas">
-                <div class="space-y-1">
-                  <dd class="text-sm font-bold text-stone-900">Custom WordPress</dd>
-                  <dt class="text-xs text-stone-500 font-medium">Themes & Dynamic CPTs</dt>
-                </div>
-                <div class="space-y-1">
-                  <dd class="text-sm font-bold text-stone-900">WooCommerce</dd>
-                  <dt class="text-xs text-stone-500 font-medium">Store & Checkout UX</dt>
-                </div>
-                <div class="space-y-1">
-                  <dd class="text-sm font-bold text-stone-900">AI Integrations</dd>
-                  <dt class="text-xs text-stone-500 font-medium">Workflows & APIs</dt>
-                </div>
-                <div class="space-y-1">
-                  <dd class="text-sm font-bold text-stone-900">Core Web Vitals</dd>
-                  <dt class="text-xs text-stone-500 font-medium">Speed & SEO Audits</dt>
-                </div>
-              </dl>
-            </div>
-          </div>
-
-          <!-- Right Column: Floating 3D Control & Status Card -->
-          <div class="lg:col-span-5 flex flex-col gap-4">
-            <div class="pointer-events-auto rounded-3xl border border-stone-200/90 bg-white/80 p-5 sm:p-6 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-emerald-700/30">
-              
-              <!-- Status Header -->
-              <div class="flex items-center justify-between gap-2 pb-4 border-b border-stone-100">
-                <div class="flex items-center gap-1.5 text-xs font-semibold text-emerald-900 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60">
-                  <svg class="h-3.5 w-3.5 text-emerald-700" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Independent Specialist</span>
-                </div>
-                <div class="flex items-center gap-2 text-xs font-medium text-stone-600">
-                  <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span>Available for Select Projects</span>
-                </div>
-              </div>
-
-              <!-- Profile Badge -->
-              <div class="mt-4 flex items-center gap-4">
-                <div class="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-2xl border-2 border-brand shadow-md">
-                  <img src="https://zeeshan-snowy.vercel.app/wp-content/uploads/2026/08/e081a0e1-79db-4081-ba5f-0b153db2e6c4.png" alt="Zeeshan Developer" class="h-full w-full object-cover">
-                  <div class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-white"></div>
-                </div>
-
-                <div class="flex-1 min-w-0">
-                  <h3 class="text-base font-bold text-stone-900 truncate">Zeeshan</h3>
-                  <p class="text-xs font-medium text-brand truncate">WordPress & AI Website Developer</p>
-                  <p class="text-[11px] text-stone-500 mt-0.5">Direct Engineer Collaboration · Zero Agency Overhead</p>
-                </div>
-              </div>
-
-              <!-- 3D Orbit Universe Visual Legend -->
-              <div class="mt-5 rounded-2xl border border-stone-200/80 bg-stone-50/70 p-3.5 space-y-2.5">
-                <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-stone-500">
-                  <span class="flex items-center gap-1.5">
-                    <svg class="h-3.5 w-3.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>3D Orbiting Architecture</span>
-                  </span>
-                  <span class="text-[10px] text-emerald-800 font-mono bg-emerald-100/70 px-2 py-0.5 rounded">
-                    ACTIVE 60 FPS
-                  </span>
-                </div>
-
-                <div class="grid grid-cols-2 gap-2 text-xs">
-                  <div class="flex items-center gap-2 rounded-lg bg-white/90 px-2.5 py-1.5 border border-stone-200/80 shadow-2xs">
-                    <span class="h-2 w-2 rounded-full bg-[#21759b]"></span>
-                    <span class="font-semibold text-stone-800 text-[11px]">WordPress Core</span>
-                  </div>
-                  <div class="flex items-center gap-2 rounded-lg bg-white/90 px-2.5 py-1.5 border border-stone-200/80 shadow-2xs">
-                    <span class="h-2 w-2 rounded-full bg-[#10b981]"></span>
-                    <span class="font-semibold text-stone-800 text-[11px]">OpenAI & APIs</span>
-                  </div>
-                  <div class="flex items-center gap-2 rounded-lg bg-white/90 px-2.5 py-1.5 border border-stone-200/80 shadow-2xs">
-                    <span class="h-2 w-2 rounded-full bg-[#96588a]"></span>
-                    <span class="font-semibold text-stone-800 text-[11px]">WooCommerce</span>
-                  </div>
-                  <div class="flex items-center gap-2 rounded-lg bg-white/90 px-2.5 py-1.5 border border-stone-200/80 shadow-2xs">
-                    <span class="h-2 w-2 rounded-full bg-[#d97706]"></span>
-                    <span class="font-semibold text-stone-800 text-[11px]">AI Copilots</span>
-                  </div>
-                </div>
-
-                <p class="text-[11px] leading-relaxed text-stone-500 pt-1">
-                  Interact directly with the 3D canvas behind this card: drag anywhere to rotate 3D perspectives smoothly.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
+      <!-- Centered Overlay Content Framing the Dead-Center Avatar -->
+      <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 w-full pointer-events-none flex flex-col items-center text-center">
+        
+        <!-- Eyebrow Pill -->
+        <div class="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-stone-200/90 bg-white/85 px-4 py-1.5 text-xs font-semibold text-brand shadow-sm backdrop-blur-md">
+          <svg class="h-3.5 w-3.5 text-emerald-700 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+          <span>WordPress Development · WooCommerce · AI Integrations</span>
         </div>
+
+        <!-- Headline -->
+        <h1 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[1.12] pointer-events-auto">
+          Zeeshan Web Solution
+          <span class="block mt-2 text-xl sm:text-2xl lg:text-3xl font-semibold text-brand font-sans tracking-normal">
+            WordPress Developer & AI Website Developer
+          </span>
+        </h1>
+
+        <!-- Lead Description -->
+        <p class="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-stone-700 pointer-events-auto">
+          I engineer custom WordPress websites, WooCommerce stores, and AI-enabled web workflows for founders, businesses, and digital agencies worldwide. Focused on clean code, fast page loads, and clear conversion paths.
+        </p>
+
+        <!-- Action CTAs -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3.5 pointer-events-auto">
+          <a href="#work" class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-950/15 transition-all duration-200 hover:bg-brand-hover hover:shadow-xl hover:-translate-y-0.5">
+            <span>View Selected Work</span>
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <a href="https://wa.me/923057046739" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white/95 px-6 py-3.5 text-sm font-semibold text-stone-800 shadow-sm transition-all duration-200 hover:bg-stone-50 hover:border-stone-400 hover:-translate-y-0.5">
+            <span>Discuss Your Project</span>
+          </a>
+        </div>
+
+        <!-- Dead-Center 3D Stage Clearance Area -->
+        <div class="w-full h-48 sm:h-64 my-2 pointer-events-none" aria-hidden="true"></div>
+
+        <!-- 3D Orbiting Architecture Badges Legend -->
+        <div class="pointer-events-auto inline-flex flex-wrap items-center justify-center gap-2.5 rounded-2xl border border-stone-200/90 bg-white/90 p-2.5 text-xs font-semibold text-stone-800 shadow-md backdrop-blur-md">
+          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-sky-50 text-sky-900 border border-sky-200/60">
+            <span class="h-2 w-2 rounded-full bg-sky-500"></span>
+            <span>WordPress</span>
+          </div>
+          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-rose-50 text-rose-900 border border-rose-200/60">
+            <span class="h-2 w-2 rounded-full bg-[#92003b]"></span>
+            <span>Elementor Pro</span>
+          </div>
+          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-purple-50 text-purple-900 border border-purple-200/60">
+            <span class="h-2 w-2 rounded-full bg-[#96588a]"></span>
+            <span>WooCommerce</span>
+          </div>
+          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-200/60">
+            <span class="h-2 w-2 rounded-full bg-[#10a37f]"></span>
+            <span>OpenAI API</span>
+          </div>
+          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-indigo-50 text-indigo-900 border border-indigo-200/60">
+            <span class="h-2 w-2 rounded-full bg-[#4F5B93]"></span>
+            <span>PHP 8.3</span>
+          </div>
+        </div>
+
+        <!-- Capability Proof Anchors -->
+        <dl class="mt-8 pt-6 border-t border-stone-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 w-full max-w-4xl pointer-events-auto text-left" aria-label="Core capability areas">
+          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
+            <dd class="text-sm font-bold text-stone-900">Custom WordPress</dd>
+            <dt class="text-xs text-stone-500 font-medium">Themes & Dynamic CPTs</dt>
+          </div>
+          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
+            <dd class="text-sm font-bold text-stone-900">WooCommerce</dd>
+            <dt class="text-xs text-stone-500 font-medium">Store & Checkout UX</dt>
+          </div>
+          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
+            <dd class="text-sm font-bold text-stone-900">AI Integrations</dd>
+            <dt class="text-xs text-stone-500 font-medium">Workflows & APIs</dt>
+          </div>
+          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
+            <dd class="text-sm font-bold text-stone-900">Core Web Vitals</dd>
+            <dt class="text-xs text-stone-500 font-medium">Speed & SEO Audits</dt>
+          </div>
+        </dl>
+
       </div>
     </section>
 
     <!-- ========================================================= -->
-    <!-- CASE STUDIES SECTION WITH 4 MODERN BROWSER MOCKUPS -->
+    <!-- 3. 4 CASE STUDY PROJECT CARDS WITH MODERN BROWSER MOCKUPS -->
     <!-- ========================================================= -->
     <section id="work" class="py-20 lg:py-28 border-t border-stone-200/80 bg-surface-base">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <!-- Section Heading -->
         <div class="max-w-3xl mb-12 sm:mb-16">
           <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 border border-emerald-200 mb-3">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
@@ -272,16 +509,14 @@
             Engineered around the problem, not a generic template.
           </h2>
           <p class="mt-3 text-base sm:text-lg text-stone-600">
-            Explore 4 production-grade implementations spanning AI-powered healthcare portals, high-volume WooCommerce architectures, dynamic relational directories, and automated conversational copilots.
+            Explore 4 production-grade implementations spanning multi-agent directories, direct hospitality ordering, editorial luxury commerce, and automated conversational AI copilots.
           </p>
         </div>
 
-        <!-- 4 Case Study Cards Grid -->
         <div class="space-y-12 sm:space-y-16">
 
-          <!-- PROJECT 01: Aura Health & MedTech -->
+          <!-- PROJECT 01: PropMix Real Estate -->
           <article class="group relative overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:border-emerald-700/30 flex flex-col lg:flex-row gap-6 lg:gap-10 p-5 sm:p-7 lg:p-8">
-            <!-- Browser Mockup -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="overflow-hidden rounded-xl border border-stone-300/80 bg-stone-100 shadow-md transition-transform duration-300 group-hover:-translate-y-1">
                 <div class="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100/95 px-3.5 py-2.5">
@@ -292,12 +527,12 @@
                   </div>
                   <div class="flex flex-1 max-w-sm items-center justify-center gap-1.5 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs text-stone-600 shadow-inner font-mono truncate">
                     <svg class="h-3 w-3 text-emerald-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" /></svg>
-                    <span>aurahealth-demo.example.com</span>
+                    <span>dev-prop-mix.pantheonsite.io</span>
                   </div>
                   <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
                 </div>
                 <div class="relative aspect-[16/10] w-full overflow-hidden bg-stone-900/5">
-                  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Aura Health" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
+                  <img src="/images/een-1080-x-1080-px-3.png" alt="PropMix Real Estate" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
                   <div class="absolute top-3 left-3 flex items-center gap-1.5 rounded-full backdrop-blur-md bg-stone-900/80 px-2.5 py-1 text-[11px] font-medium text-white shadow-lg">
                     <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
                     <span>Production Architecture</span>
@@ -309,62 +544,60 @@
               </div>
               <div class="mt-4 grid grid-cols-2 gap-2 text-xs">
                 <div class="flex items-center justify-between rounded-lg border border-stone-200 bg-stone-50/80 px-3 py-2 text-stone-700">
-                  <span class="text-stone-500 font-medium text-[11px]">Core Web Vitals</span>
-                  <span class="font-semibold text-emerald-800">98/100 Mobile Score</span>
+                  <span class="text-stone-500 font-medium text-[11px]">Architecture</span>
+                  <span class="font-semibold text-emerald-800">Custom CPT + Taxonomies</span>
                 </div>
                 <div class="flex items-center justify-between rounded-lg border border-stone-200 bg-stone-50/80 px-3 py-2 text-stone-700">
-                  <span class="text-stone-500 font-medium text-[11px]">AI Integration</span>
-                  <span class="font-semibold text-emerald-800">Automated Triage Flow</span>
+                  <span class="text-stone-500 font-medium text-[11px]">Front-end</span>
+                  <span class="font-semibold text-emerald-800">Role-aware Agent Dashboard</span>
                 </div>
               </div>
             </div>
 
-            <!-- Content Column -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="space-y-4">
                 <div class="flex items-center justify-between gap-2">
-                  <span class="text-xs font-semibold uppercase tracking-wider text-emerald-800">AI-Powered Patient Triage & Custom WordPress Portal</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-emerald-800">Real Estate Directory & Multi-Agent Listing Platform</span>
                   <span class="font-mono text-sm font-bold text-stone-400">01 / 04</span>
                 </div>
-                <h3 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl">Aura Health & MedTech</h3>
+                <h3 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl">PropMix Real Estate</h3>
                 <p class="text-sm leading-relaxed text-stone-600 sm:text-base">
-                  A medical and wellness digital portal engineered with custom patient intake workflows, headless CMS content delivery, and automated symptom triage.
+                  A dynamic real-estate portal engineered with custom listing workflows, front-end submission forms, agent dashboards, and advanced filtering.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   <div class="rounded-xl border border-stone-200/80 bg-stone-50/60 p-3.5">
                     <span class="block text-[11px] font-bold uppercase tracking-wider text-stone-500">Challenge</span>
-                    <p class="mt-1 text-xs leading-relaxed text-stone-700">A clinic network struggled with fragmented patient onboarding, sluggish mobile loading, and manual intake questionnaires that created provider scheduling bottlenecks.</p>
+                    <p class="mt-1 text-xs leading-relaxed text-stone-700">The client required a structured property directory where agents could submit and manage real estate listings directly from the front-end without accessing the WordPress admin dashboard.</p>
                   </div>
                   <div class="rounded-xl border border-emerald-900/10 bg-emerald-50/40 p-3.5">
                     <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-800">Engineering Solution</span>
-                    <p class="mt-1 text-xs leading-relaxed text-emerald-950">Architected a secure headless WordPress backend coupled with a responsive Next.js frontend and an OpenAI triage assistant that dynamically clarifies symptoms and routes appointments.</p>
+                    <p class="mt-1 text-xs leading-relaxed text-emerald-950">Architected custom post types and relational taxonomies via JetEngine, developed role-restricted front-end posting forms, and implemented faceted AJAX search queries for instantaneous property filtering.</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-2.5 rounded-xl border border-stone-200/90 bg-white p-3 text-xs text-stone-700 shadow-sm">
                   <span class="font-semibold text-stone-900">Quantified Result:</span>
-                  <span>Reduced intake completion drop-offs by 44%, achieved a 98/100 Core Web Vitals score, and automated appointment pre-screening.</span>
+                  <span>Delivered a multi-agent directory platform with streamlined content moderation and responsive search performance across devices.</span>
                 </div>
               </div>
 
-              <!-- Tech Badges -->
               <div class="mt-5 pt-4 border-t border-stone-100 space-y-3">
                 <div>
                   <span class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">Integrated Tech Stack</span>
                   <div class="flex flex-wrap gap-1.5">
                     <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-sky-50 text-sky-900 border-sky-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>WordPress</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-zinc-100 text-zinc-900 border-zinc-200"><span class="h-1.5 w-1.5 rounded-full bg-zinc-900"></span>Next.js</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-emerald-50 text-emerald-900 border-emerald-200"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>OpenAI API</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-cyan-50 text-cyan-900 border-cyan-200"><span class="h-1.5 w-1.5 rounded-full bg-cyan-500"></span>Tailwind CSS</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-amber-50 text-amber-900 border-amber-200"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>JetEngine</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>PHP</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-rose-50 text-rose-900 border-rose-200"><span class="h-1.5 w-1.5 rounded-full bg-[#92003b]"></span>Elementor Pro</span>
                     <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>REST API</span>
                   </div>
                 </div>
                 <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
                   <div class="flex flex-wrap gap-1.5 text-[11px] text-stone-500">
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Custom Portal Architecture</span>
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">AI Intake Workflow</span>
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Headless CMS</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">CMS Architecture</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Custom Field Modeling</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Speed Optimization</span>
                   </div>
-                  <a href="https://aurahealth-demo.example.com" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
+                  <a href="https://dev-prop-mix.pantheonsite.io" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
                     <span>Live Demo</span>
                     <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   </a>
@@ -373,9 +606,8 @@
             </div>
           </article>
 
-          <!-- PROJECT 02: Nexus Luxury Apparel -->
+          <!-- PROJECT 02: ZaiqaBites Hospitality -->
           <article class="group relative overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:border-emerald-700/30 flex flex-col lg:flex-row-reverse gap-6 lg:gap-10 p-5 sm:p-7 lg:p-8">
-            <!-- Browser Mockup -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="overflow-hidden rounded-xl border border-stone-300/80 bg-stone-100 shadow-md transition-transform duration-300 group-hover:-translate-y-1">
                 <div class="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100/95 px-3.5 py-2.5">
@@ -386,12 +618,12 @@
                   </div>
                   <div class="flex flex-1 max-w-sm items-center justify-center gap-1.5 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs text-stone-600 shadow-inner font-mono truncate">
                     <svg class="h-3 w-3 text-emerald-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" /></svg>
-                    <span>nexusluxury-demo.example.com</span>
+                    <span>dev-zaiqa-bites.pantheonsite.io</span>
                   </div>
                   <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
                 </div>
                 <div class="relative aspect-[16/10] w-full overflow-hidden bg-stone-900/5">
-                  <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80" alt="Nexus Luxury" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
+                  <img src="/images/een-1080-x-1080-px-5.png" alt="ZaiqaBites Hospitality" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
                   <div class="absolute top-3 left-3 flex items-center gap-1.5 rounded-full backdrop-blur-md bg-stone-900/80 px-2.5 py-1 text-[11px] font-medium text-white shadow-lg">
                     <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
                     <span>Production Architecture</span>
@@ -403,62 +635,59 @@
               </div>
               <div class="mt-4 grid grid-cols-2 gap-2 text-xs">
                 <div class="flex items-center justify-between rounded-lg border border-stone-200 bg-stone-50/80 px-3 py-2 text-stone-700">
-                  <span class="text-stone-500 font-medium text-[11px]">Performance</span>
-                  <span class="font-semibold text-emerald-800">&lt;850ms First Contentful Paint</span>
+                  <span class="text-stone-500 font-medium text-[11px]">Mobile UX</span>
+                  <span class="font-semibold text-emerald-800">Sticky Category Navigation</span>
                 </div>
                 <div class="flex items-center justify-between rounded-lg border border-stone-200 bg-stone-50/80 px-3 py-2 text-stone-700">
-                  <span class="text-stone-500 font-medium text-[11px]">Checkout</span>
-                  <span class="font-semibold text-emerald-800">1-Step Frictionless Funnel</span>
+                  <span class="text-stone-500 font-medium text-[11px]">Ordering Flow</span>
+                  <span class="font-semibold text-emerald-800">Direct Conversion Path</span>
                 </div>
               </div>
             </div>
 
-            <!-- Content Column -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="space-y-4">
                 <div class="flex items-center justify-between gap-2">
-                  <span class="text-xs font-semibold uppercase tracking-wider text-emerald-800">High-Volume Direct-to-Consumer WooCommerce Architecture</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-emerald-800">Hospitality & Digital Direct-Ordering Experience</span>
                   <span class="font-mono text-sm font-bold text-stone-400">02 / 04</span>
                 </div>
-                <h3 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl">Nexus Luxury Apparel</h3>
+                <h3 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl">ZaiqaBites Hospitality</h3>
                 <p class="text-sm leading-relaxed text-stone-600 sm:text-base">
-                  An editorial apparel boutique engineered for zero-friction browsing, instant color swatch previews, and accelerated mobile single-page checkout.
+                  A fast-loading digital restaurant experience centered on visual menu exploration, dietary filtering, and direct customer ordering.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   <div class="rounded-xl border border-stone-200/80 bg-stone-50/60 p-3.5">
                     <span class="block text-[11px] font-bold uppercase tracking-wider text-stone-500">Challenge</span>
-                    <p class="mt-1 text-xs leading-relaxed text-stone-700">High checkout abandonment on mobile devices due to slow catalog filtering, unoptimized asset payloads, and disjointed multi-step checkout forms.</p>
+                    <p class="mt-1 text-xs leading-relaxed text-stone-700">A complex multi-category restaurant menu was cumbersome on mobile devices, creating friction for customers looking to place direct orders quickly.</p>
                   </div>
                   <div class="rounded-xl border border-emerald-900/10 bg-emerald-50/40 p-3.5">
                     <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-800">Engineering Solution</span>
-                    <p class="mt-1 text-xs leading-relaxed text-emerald-950">Developed a custom lightweight WooCommerce theme with instantaneous AJAX attribute filtering, responsive lookbook galleries, and a frictionless single-step Stripe payment drawer.</p>
+                    <p class="mt-1 text-xs leading-relaxed text-emerald-950">Re-engineered the menu showcase with a clear category navigation bar, responsive nutritional highlights, and an intuitive direct-to-WhatsApp/call ordering workflow.</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-2.5 rounded-xl border border-stone-200/90 bg-white p-3 text-xs text-stone-700 shadow-sm">
                   <span class="font-semibold text-stone-900">Quantified Result:</span>
-                  <span>Achieved sub-850ms page transitions, increased mobile checkout completion by 32%, and safely accommodated flash-sale traffic spikes.</span>
+                  <span>Built a modern culinary showcase that makes dish discovery and direct ordering straightforward on mobile screens.</span>
                 </div>
               </div>
 
-              <!-- Tech Badges -->
               <div class="mt-5 pt-4 border-t border-stone-100 space-y-3">
                 <div>
                   <span class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">Integrated Tech Stack</span>
                   <div class="flex flex-wrap gap-1.5">
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-purple-50 text-purple-900 border-purple-200"><span class="h-1.5 w-1.5 rounded-full bg-purple-500"></span>WooCommerce</span>
                     <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-sky-50 text-sky-900 border-sky-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>WordPress</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>Stripe API</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-amber-50 text-amber-900 border-amber-200"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>JetEngine</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-cyan-50 text-cyan-900 border-cyan-200"><span class="h-1.5 w-1.5 rounded-full bg-cyan-500"></span>Tailwind CSS</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-rose-50 text-rose-900 border-rose-200"><span class="h-1.5 w-1.5 rounded-full bg-[#92003b]"></span>Elementor Pro</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-purple-50 text-purple-900 border-purple-200"><span class="h-1.5 w-1.5 rounded-full bg-purple-500"></span>WooCommerce</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>Custom PHP</span>
                   </div>
                 </div>
                 <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
                   <div class="flex flex-wrap gap-1.5 text-[11px] text-stone-500">
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Store Architecture</span>
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Checkout UX</span>
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Speed Engineering</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">UI/UX Engineering</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Menu Architecture</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Mobile Optimization</span>
                   </div>
-                  <a href="https://nexusluxury-demo.example.com" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
+                  <a href="https://dev-zaiqa-bites.pantheonsite.io" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
                     <span>Live Demo</span>
                     <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   </a>
@@ -467,9 +696,8 @@
             </div>
           </article>
 
-          <!-- PROJECT 03: UrbanEdge Real Estate -->
+          <!-- PROJECT 03: Rivaah Fashion -->
           <article class="group relative overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:border-emerald-700/30 flex flex-col lg:flex-row gap-6 lg:gap-10 p-5 sm:p-7 lg:p-8">
-            <!-- Browser Mockup -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="overflow-hidden rounded-xl border border-stone-300/80 bg-stone-100 shadow-md transition-transform duration-300 group-hover:-translate-y-1">
                 <div class="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100/95 px-3.5 py-2.5">
@@ -480,12 +708,12 @@
                   </div>
                   <div class="flex flex-1 max-w-sm items-center justify-center gap-1.5 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs text-stone-600 shadow-inner font-mono truncate">
                     <svg class="h-3 w-3 text-emerald-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" /></svg>
-                    <span>urbanedge-demo.example.com</span>
+                    <span>dev-rivaah.pantheonsite.io</span>
                   </div>
                   <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
                 </div>
                 <div class="relative aspect-[16/10] w-full overflow-hidden bg-stone-900/5">
-                  <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="UrbanEdge" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
+                  <img src="/images/een-1080-x-1080-px-6.png" alt="Rivaah Fashion" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
                   <div class="absolute top-3 left-3 flex items-center gap-1.5 rounded-full backdrop-blur-md bg-stone-900/80 px-2.5 py-1 text-[11px] font-medium text-white shadow-lg">
                     <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
                     <span>Production Architecture</span>
@@ -497,62 +725,59 @@
               </div>
               <div class="mt-4 grid grid-cols-2 gap-2 text-xs">
                 <div class="flex items-center justify-between rounded-lg border border-stone-200 bg-stone-50/80 px-3 py-2 text-stone-700">
-                  <span class="text-stone-500 font-medium text-[11px]">Data Architecture</span>
-                  <span class="font-semibold text-emerald-800">Relational CPTs & Taxonomies</span>
+                  <span class="text-stone-500 font-medium text-[11px]">Storefront</span>
+                  <span class="font-semibold text-emerald-800">Editorial Grid Architecture</span>
                 </div>
                 <div class="flex items-center justify-between rounded-lg border border-stone-200 bg-stone-50/80 px-3 py-2 text-stone-700">
-                  <span class="text-stone-500 font-medium text-[11px]">Search Speed</span>
-                  <span class="font-semibold text-emerald-800">Instantaneous AJAX Facets</span>
+                  <span class="text-stone-500 font-medium text-[11px]">Checkout</span>
+                  <span class="font-semibold text-emerald-800">Friction-free UX</span>
                 </div>
               </div>
             </div>
 
-            <!-- Content Column -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="space-y-4">
                 <div class="flex items-center justify-between gap-2">
-                  <span class="text-xs font-semibold uppercase tracking-wider text-emerald-800">Multi-Agent Commercial & Residential Directory Platform</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-emerald-800">Editorial Luxury Fashion & High-Speed E-Commerce</span>
                   <span class="font-mono text-sm font-bold text-stone-400">03 / 04</span>
                 </div>
-                <h3 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl">UrbanEdge Real Estate</h3>
+                <h3 class="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl">Rivaah Fashion</h3>
                 <p class="text-sm leading-relaxed text-stone-600 sm:text-base">
-                  A full-scale real estate directory platform featuring front-end agent submissions, relational taxonomy search, and interactive geolocation maps.
+                  An editorial apparel boutique combining minimalist typography with curated product lookbooks and streamlined checkout flows.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   <div class="rounded-xl border border-stone-200/80 bg-stone-50/60 p-3.5">
                     <span class="block text-[11px] font-bold uppercase tracking-wider text-stone-500">Challenge</span>
-                    <p class="mt-1 text-xs leading-relaxed text-stone-700">Agents lacked a self-serve front-end listing dashboard, forcing staff into manual listings moderation while prospective buyers experienced laggy directory filtering.</p>
+                    <p class="mt-1 text-xs leading-relaxed text-stone-700">The apparel brand needed an e-commerce storefront with the visual restraint of high-end editorial design while remaining simple for an in-house team to manage.</p>
                   </div>
                   <div class="rounded-xl border border-emerald-900/10 bg-emerald-50/40 p-3.5">
                     <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-800">Engineering Solution</span>
-                    <p class="mt-1 text-xs leading-relaxed text-emerald-950">Built relational custom post types via JetEngine, secure role-restricted agent management portals, and faceted AJAX queries with interactive map pinning.</p>
+                    <p class="mt-1 text-xs leading-relaxed text-emerald-950">Developed a custom WooCommerce theme with a neutral color palette, generous whitespace, optimized product imagery, and an uncluttered single-page checkout.</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-2.5 rounded-xl border border-stone-200/90 bg-white p-3 text-xs text-stone-700 shadow-sm">
                   <span class="font-semibold text-stone-900">Quantified Result:</span>
-                  <span>Scaled the portal to 4,500+ dynamic listings with sub-second search responses and streamlined agent onboarding without WP admin access.</span>
+                  <span>Delivered an editorial boutique storefront optimized for mobile browsing and fast checkout completion.</span>
                 </div>
               </div>
 
-              <!-- Tech Badges -->
               <div class="mt-5 pt-4 border-t border-stone-100 space-y-3">
                 <div>
                   <span class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">Integrated Tech Stack</span>
                   <div class="flex flex-wrap gap-1.5">
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-purple-50 text-purple-900 border-purple-200"><span class="h-1.5 w-1.5 rounded-full bg-purple-500"></span>WooCommerce</span>
                     <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-sky-50 text-sky-900 border-sky-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>WordPress</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-amber-50 text-amber-900 border-amber-200"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>JetEngine</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>PHP 8.3</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>REST APIs</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-emerald-50 text-emerald-900 border-emerald-200"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Mapbox GL</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>Custom PHP</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>Stripe API</span>
                   </div>
                 </div>
                 <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
                   <div class="flex flex-wrap gap-1.5 text-[11px] text-stone-500">
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Directory Architecture</span>
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Custom Field Modeling</span>
-                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Agent Dashboard UX</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Store Architecture</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Checkout UX</span>
+                    <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Speed Engineering</span>
                   </div>
-                  <a href="https://urbanedge-demo.example.com" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
+                  <a href="https://dev-rivaah.pantheonsite.io" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
                     <span>Live Demo</span>
                     <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   </a>
@@ -563,7 +788,6 @@
 
           <!-- PROJECT 04: Synthetix AI Copilot -->
           <article class="group relative overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:border-emerald-700/30 flex flex-col lg:flex-row-reverse gap-6 lg:gap-10 p-5 sm:p-7 lg:p-8">
-            <!-- Browser Mockup -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="overflow-hidden rounded-xl border border-stone-300/80 bg-stone-100 shadow-md transition-transform duration-300 group-hover:-translate-y-1">
                 <div class="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100/95 px-3.5 py-2.5">
@@ -574,12 +798,12 @@
                   </div>
                   <div class="flex flex-1 max-w-sm items-center justify-center gap-1.5 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs text-stone-600 shadow-inner font-mono truncate">
                     <svg class="h-3 w-3 text-emerald-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" /></svg>
-                    <span>synthetix-demo.example.com</span>
+                    <span>wa.me/923057046739</span>
                   </div>
                   <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
                 </div>
                 <div class="relative aspect-[16/10] w-full overflow-hidden bg-stone-900/5">
-                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Synthetix AI" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
+                  <img src="/images/een-1080-x-1080-px-4.png" alt="Synthetix AI Copilot" class="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105">
                   <div class="absolute top-3 left-3 flex items-center gap-1.5 rounded-full backdrop-blur-md bg-stone-900/80 px-2.5 py-1 text-[11px] font-medium text-white shadow-lg">
                     <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
                     <span>Production Architecture</span>
@@ -601,7 +825,6 @@
               </div>
             </div>
 
-            <!-- Content Column -->
             <div class="flex-1 w-full flex flex-col justify-between">
               <div class="space-y-4">
                 <div class="flex items-center justify-between gap-2">
@@ -628,16 +851,15 @@
                 </div>
               </div>
 
-              <!-- Tech Badges -->
               <div class="mt-5 pt-4 border-t border-stone-100 space-y-3">
                 <div>
                   <span class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">Integrated Tech Stack</span>
                   <div class="flex flex-wrap gap-1.5">
                     <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-sky-50 text-sky-900 border-sky-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>WordPress</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-zinc-100 text-zinc-900 border-zinc-200"><span class="h-1.5 w-1.5 rounded-full bg-zinc-900"></span>Next.js 15</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-emerald-50 text-emerald-900 border-emerald-200"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>OpenAI Assistant API</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-zinc-100 text-zinc-900 border-zinc-200"><span class="h-1.5 w-1.5 rounded-full bg-zinc-900"></span>Next.js</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-emerald-50 text-emerald-900 border-emerald-200"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>OpenAI API</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>PHP</span>
                     <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-cyan-50 text-cyan-900 border-cyan-200"><span class="h-1.5 w-1.5 rounded-full bg-cyan-500"></span>Tailwind CSS</span>
-                    <span class="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium bg-stone-50 text-stone-800 border-stone-200"><span class="h-1.5 w-1.5 rounded-full bg-stone-500"></span>Webhooks</span>
                   </div>
                 </div>
                 <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
@@ -646,9 +868,9 @@
                     <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">CRM Webhooks</span>
                     <span class="rounded-full bg-stone-100 px-2 py-0.5 font-medium">Conversational UX</span>
                   </div>
-                  <a href="https://synthetix-demo.example.com" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
-                    <span>Live Demo</span>
-                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  <a href="https://wa.me/923057046739" target="_blank" class="inline-flex items-center gap-1.5 rounded-lg bg-stone-900 px-3.5 py-1.5 text-xs font-semibold text-white transition-all hover:bg-brand">
+                    <span>Discuss Architecture</span>
+                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </a>
                 </div>
               </div>
@@ -658,24 +880,132 @@
         </div>
       </div>
     </section>
+
+    <!-- ========================================================= -->
+    <!-- 4. EXACT ORIGINAL CONTACT SECTION STRUCTURE -->
+    <!-- ========================================================= -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-shell contact-shell">
+        <div class="contact-kicker">
+          <span aria-hidden="true"></span> Available for Select Projects
+        </div>
+
+        <h2 id="contact-heading">
+          Let's discuss your next <span>website project.</span>
+        </h2>
+
+        <p>
+          Send your website URL, project brief, or technical requirements. I'll review the
+          scope and recommend the most practical next step.
+        </p>
+
+        <div class="contact-actions">
+          <a
+            href="https://wa.me/923057046739"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-btn-primary"
+          >
+            Start a Project Conversation
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <div class="contact-direct-links">
+            <a
+              href="mailto:zeeshanmalikoficial@gmail.com"
+              class="contact-direct-link"
+              aria-label="Send email to zeeshanmalikoficial@gmail.com"
+            >
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              zeeshanmalikoficial@gmail.com
+            </a>
+
+            <a
+              href="https://wa.me/923057046739"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-direct-link"
+              aria-label="Chat on WhatsApp"
+            >
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.761.947 2.796.947 3.179 0 5.765-2.587 5.765-5.766 0-3.18-2.586-5.734-5.765-5.734zm0-2c4.277 0 7.765 3.488 7.765 7.734 0 4.246-3.488 7.766-7.765 7.766-1.328 0-2.375-.367-3.447-.969l-4.584 1.297 1.32-4.477c-.687-1.125-1.054-2.296-1.054-3.617 0-4.246 3.488-7.734 7.765-7.734z" /></svg>
+              WhatsApp: +92 305 7046739
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ========================================================= -->
-  <!-- THREE.JS 3D UNIVERSE SCRIPT INITIALIZATION -->
+  <!-- 5. EXACT ORIGINAL FOOTER STRUCTURE -->
+  <!-- ========================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="section-shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home" aria-label="Zeeshan Web Solution - Back to top">
+          <span class="brand-mark" aria-hidden="true">Z</span>
+          <span class="brand-copy">
+            Zeeshan<span>.ws</span>
+          </span>
+        </a>
+        <p class="footer-desc">
+          WordPress engineering, WooCommerce architectures, and AI-powered web solutions crafted
+          for international founders and ambitious brands.
+        </p>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-column">
+          <span>Navigation</span>
+          <a href="#services">Services</a>
+          <a href="#work">Case Studies</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="footer-links-column">
+          <span>Connect</span>
+          <a href="mailto:zeeshanmalikoficial@gmail.com">
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            Email
+          </a>
+          <a href="https://wa.me/923057046739" target="_blank" rel="noopener noreferrer">
+            <svg class="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.761.947 2.796.947 3.179 0 5.765-2.587 5.765-5.766 0-3.18-2.586-5.734-5.765-5.734z" /></svg>
+            WhatsApp
+          </a>
+          <a href="#home">
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+            Back to top
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-shell footer-bottom">
+      <span>© 2026 Zeeshan Web Solution. All rights reserved.</span>
+      <span>Designed for clarity · Engineered for performance</span>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- 6. THREE.JS SCRIPT: DEAD-CENTER AVATAR & 5 ORBITING BADGES -->
   <!-- ========================================================= -->
   <script>
     (function init3DHero() {
-      const container = document.getElementById("hero-3d-container");
+      const container = document.getElementById("hero-3d-canvas-container");
       if (!container || !window.THREE) return;
 
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       // SCENE & CAMERA
       const scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0xf8f7f4, 0.0018);
+      scene.fog = new THREE.FogExp2(0xf8f7f4, 0.0016);
 
       const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-      camera.position.set(0, 8, 36);
+      camera.position.set(0, 0, 38);
 
       // RENDERER
       const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
@@ -683,76 +1013,22 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       container.appendChild(renderer.domElement);
 
-      // LIGHTS
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+      // LIGHTING
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.3);
       scene.add(ambientLight);
 
-      const dirLight1 = new THREE.DirectionalLight(0x285141, 2.5);
+      const dirLight1 = new THREE.DirectionalLight(0x285141, 2.8);
       dirLight1.position.set(20, 30, 25);
       scene.add(dirLight1);
 
       const dirLight2 = new THREE.DirectionalLight(0x10b981, 1.8);
-      dirLight2.position.set(-25, -15, -20);
+      dirLight2.position.set(-25, -20, -20);
       scene.add(dirLight2);
 
       const worldGroup = new THREE.Group();
       scene.add(worldGroup);
 
-      // 1. CENTRAL GLOWING TECH CORE
-      const coreGroup = new THREE.Group();
-      worldGroup.add(coreGroup);
-
-      const icoGeo = new THREE.IcosahedronGeometry(3.2, 1);
-      const icoMat = new THREE.MeshStandardMaterial({
-        color: 0x285141,
-        wireframe: true,
-        roughness: 0.2,
-        metalness: 0.8,
-        transparent: true,
-        opacity: 0.45
-      });
-      const icoMesh = new THREE.Mesh(icoGeo, icoMat);
-      coreGroup.add(icoMesh);
-
-      const sphereGeo = new THREE.SphereGeometry(2.0, 32, 32);
-      const sphereMat = new THREE.MeshPhysicalMaterial({
-        color: 0x1e3e32,
-        emissive: 0x285141,
-        emissiveIntensity: 0.6,
-        roughness: 0.1,
-        metalness: 0.2,
-        transparent: true,
-        opacity: 0.85
-      });
-      const coreSphere = new THREE.Mesh(sphereGeo, sphereMat);
-      coreGroup.add(coreSphere);
-
-      // 2. ORBITAL RINGS
-      const createOrbitLine = (radiusX, radiusZ, tiltX, tiltZ) => {
-        const curve = new THREE.EllipseCurve(0, 0, radiusX, radiusZ, 0, 2 * Math.PI, false, 0);
-        const points = curve.getPoints(120);
-        const geometry = new THREE.BufferGeometry().setFromPoints(points.map(p => new THREE.Vector3(p.x, 0, p.y)));
-        const material = new THREE.LineDashedMaterial({
-          color: 0x285141,
-          dashSize: 0.8,
-          gapSize: 0.4,
-          transparent: true,
-          opacity: 0.22
-        });
-        const line = new THREE.Line(geometry, material);
-        line.computeLineDistances();
-        line.rotation.x = tiltX;
-        line.rotation.z = tiltZ;
-        return line;
-      };
-
-      worldGroup.add(
-        createOrbitLine(12, 10, 0.25, -0.15),
-        createOrbitLine(16, 14, -0.3, 0.2),
-        createOrbitLine(20, 18, 0.15, 0.35)
-      );
-
-      // 3. TEXTURE GENERATORS
+      // HELPER: CANVAS TEXTURE CREATOR
       const createCardCanvas = (w, h, draw) => {
         const canvas = document.createElement("canvas");
         canvas.width = w;
@@ -760,6 +1036,7 @@
         const ctx = canvas.getContext("2d");
         draw(ctx);
         const texture = new THREE.CanvasTexture(canvas);
+        texture.minFilter = THREE.LinearFilter;
         return texture;
       };
 
@@ -769,201 +1046,284 @@
         ctx.roundRect(4, 4, w - 8, h - 8, 24);
         ctx.fill();
         ctx.strokeStyle = border;
-        ctx.lineWidth = 6;
+        ctx.lineWidth = 8;
         ctx.stroke();
       };
 
-      // Textures
-      const wpTexture = createCardCanvas(512, 512, ctx => {
-        drawBadgeBg(ctx, 512, 512, "#ffffff", "#21759b");
-        ctx.fillStyle = "#21759b";
-        ctx.beginPath();
-        ctx.arc(256, 256, 175, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = "#ffffff";
-        ctx.font = "bold 220px serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText("W", 256, 265);
-        ctx.fillStyle = "#1e293b";
-        ctx.font = "bold 32px sans-serif";
-        ctx.fillText("WordPress Core", 256, 460);
-      });
-
-      const aiTexture = createCardCanvas(512, 512, ctx => {
-        drawBadgeBg(ctx, 512, 512, "#0f172a", "#10b981");
-        ctx.save();
-        ctx.translate(256, 230);
-        ctx.strokeStyle = "#10b981";
-        ctx.lineWidth = 14;
-        for (let i = 0; i < 6; i++) {
-          ctx.rotate(Math.PI / 3);
-          ctx.beginPath();
-          ctx.moveTo(0, 0);
-          ctx.lineTo(0, -110);
-          ctx.stroke();
-          ctx.fillStyle = "#34d399";
-          ctx.beginPath();
-          ctx.arc(0, -110, 18, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.arc(0, 0, 36, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-        ctx.fillStyle = "#f8fafc";
-        ctx.font = "bold 36px sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText("OpenAI & Neural API", 256, 440);
-      });
-
-      const claudeTexture = createCardCanvas(512, 512, ctx => {
-        drawBadgeBg(ctx, 512, 512, "#faf8f5", "#d97706");
-        ctx.save();
-        ctx.translate(256, 230);
-        ctx.fillStyle = "#d97706";
-        ctx.beginPath();
-        ctx.moveTo(0, -120);
-        ctx.quadraticCurveTo(0, 0, 120, 0);
-        ctx.quadraticCurveTo(0, 0, 0, 120);
-        ctx.quadraticCurveTo(0, 0, -120, 0);
-        ctx.quadraticCurveTo(0, 0, 0, -120);
-        ctx.fill();
-        ctx.restore();
-        ctx.fillStyle = "#292524";
-        ctx.font = "bold 34px sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText("AI Automation", 256, 440);
-      });
-
-      const nextTexture = createCardCanvas(512, 512, ctx => {
-        drawBadgeBg(ctx, 512, 512, "#000000", "#ffffff");
-        ctx.fillStyle = "#ffffff";
-        ctx.font = "900 130px sans-serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText("NEXT", 256, 220);
-        ctx.fillStyle = "#38bdf8";
-        ctx.font = "bold 34px monospace";
-        ctx.fillText("TypeScript + React", 256, 330);
-        ctx.fillStyle = "#94a3b8";
-        ctx.font = "bold 28px sans-serif";
-        ctx.fillText("High-Performance UX", 256, 440);
-      });
-
+      // 1. DEAD-CENTER AVATAR BADGE (Position 0, 0, 0)
       const avatarCanvas = document.createElement("canvas");
       avatarCanvas.width = 512;
       avatarCanvas.height = 512;
       const avatarCtx = avatarCanvas.getContext("2d");
-      drawBadgeBg(avatarCtx, 512, 512, "#ffffff", "#285141");
-      avatarCtx.fillStyle = "#285141";
-      avatarCtx.beginPath();
-      avatarCtx.arc(256, 230, 150, 0, Math.PI * 2);
-      avatarCtx.fill();
-      avatarCtx.fillStyle = "#ffffff";
-      avatarCtx.font = "bold 120px sans-serif";
-      avatarCtx.textAlign = "center";
-      avatarCtx.textBaseline = "middle";
-      avatarCtx.fillText("ZM", 256, 230);
-      avatarCtx.fillStyle = "#141716";
-      avatarCtx.font = "bold 34px sans-serif";
-      avatarCtx.fillText("Zeeshan · Specialist", 256, 440);
-      const avatarTexture = new THREE.CanvasTexture(avatarCanvas);
 
-      const avatarImg = new Image();
-      avatarImg.crossOrigin = "anonymous";
-      avatarImg.src = "https://zeeshan-snowy.vercel.app/wp-content/uploads/2026/08/e081a0e1-79db-4081-ba5f-0b153db2e6c4.png";
-      avatarImg.onload = () => {
+      const renderAvatar = (img) => {
         avatarCtx.clearRect(0, 0, 512, 512);
-        drawBadgeBg(avatarCtx, 512, 512, "#ffffff", "#285141");
-        avatarCtx.save();
+        avatarCtx.fillStyle = "#ffffff";
         avatarCtx.beginPath();
-        avatarCtx.arc(256, 220, 150, 0, Math.PI * 2);
-        avatarCtx.clip();
-        avatarCtx.drawImage(avatarImg, 106, 70, 300, 300);
-        avatarCtx.restore();
+        avatarCtx.arc(256, 256, 246, 0, Math.PI * 2);
+        avatarCtx.fill();
         avatarCtx.strokeStyle = "#285141";
-        avatarCtx.lineWidth = 8;
-        avatarCtx.beginPath();
-        avatarCtx.arc(256, 220, 150, 0, Math.PI * 2);
+        avatarCtx.lineWidth = 14;
         avatarCtx.stroke();
+
+        if (img) {
+          avatarCtx.save();
+          avatarCtx.beginPath();
+          avatarCtx.arc(256, 256, 236, 0, Math.PI * 2);
+          avatarCtx.clip();
+          avatarCtx.drawImage(img, 20, 20, 472, 472);
+          avatarCtx.restore();
+        } else {
+          avatarCtx.fillStyle = "#285141";
+          avatarCtx.beginPath();
+          avatarCtx.arc(256, 256, 236, 0, Math.PI * 2);
+          avatarCtx.fill();
+          avatarCtx.fillStyle = "#ffffff";
+          avatarCtx.font = "bold 150px sans-serif";
+          avatarCtx.textAlign = "center";
+          avatarCtx.textBaseline = "middle";
+          avatarCtx.fillText("Z", 256, 256);
+        }
+
         avatarCtx.fillStyle = "#10b981";
         avatarCtx.beginPath();
-        avatarCtx.arc(360, 320, 22, 0, Math.PI * 2);
+        avatarCtx.arc(410, 410, 34, 0, Math.PI * 2);
         avatarCtx.fill();
-        avatarCtx.fillStyle = "#141716";
-        avatarCtx.font = "bold 34px sans-serif";
-        avatarCtx.textAlign = "center";
-        avatarCtx.fillText("Zeeshan · Specialist", 256, 440);
+        avatarCtx.strokeStyle = "#ffffff";
+        avatarCtx.lineWidth = 8;
+        avatarCtx.stroke();
+      };
+
+      renderAvatar();
+      const avatarTexture = new THREE.CanvasTexture(avatarCanvas);
+      const profileImg = new Image();
+      profileImg.src = "/images/e081a0e1-79db-4081-ba5f-0b153db2e6c4.png";
+      profileImg.onload = () => {
+        renderAvatar(profileImg);
         avatarTexture.needsUpdate = true;
       };
 
-      // 4. BADGE MESH FACTORY
-      const createBadgeMesh = (texture, w = 4.2, h = 4.2, d = 0.4) => {
+      const centerGroup = new THREE.Group();
+      worldGroup.add(centerGroup);
+
+      const discGeo = new THREE.CylinderGeometry(5.4, 5.4, 0.6, 64);
+      const discSideMat = new THREE.MeshStandardMaterial({ color: 0x1e3e32, roughness: 0.25, metalness: 0.85 });
+      const discFrontMat = new THREE.MeshStandardMaterial({ map: avatarTexture, roughness: 0.15, metalness: 0.1 });
+      const discBackMat = new THREE.MeshStandardMaterial({ color: 0x141716, roughness: 0.3, metalness: 0.8 });
+      const centerDisc = new THREE.Mesh(discGeo, [discSideMat, discFrontMat, discBackMat]);
+      centerDisc.rotation.x = Math.PI / 2;
+      centerGroup.add(centerDisc);
+
+      const haloGeo = new THREE.RingGeometry(5.7, 6.2, 64);
+      const haloMat = new THREE.MeshBasicMaterial({ color: 0x285141, side: THREE.DoubleSide, transparent: true, opacity: 0.45 });
+      const centerHalo = new THREE.Mesh(haloGeo, haloMat);
+      centerHalo.position.z = -0.35;
+      centerGroup.add(centerHalo);
+
+      const innerPulseGeo = new THREE.RingGeometry(6.6, 6.8, 64);
+      const innerPulseMat = new THREE.MeshBasicMaterial({ color: 0x10b981, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
+      const innerPulseRing = new THREE.Mesh(innerPulseGeo, innerPulseMat);
+      innerPulseRing.position.z = -0.4;
+      centerGroup.add(innerPulseRing);
+
+      // 2. ORBITING RINGS
+      const orbitRadiusX = 17.5;
+      const orbitRadiusZ = 14.5;
+      const orbitTiltX = 0.35;
+      const orbitTiltZ = -0.15;
+
+      const createOrbitRing = () => {
+        const curve = new THREE.EllipseCurve(0, 0, orbitRadiusX, orbitRadiusZ, 0, 2 * Math.PI, false, 0);
+        const points = curve.getPoints(160);
+        const geometry = new THREE.BufferGeometry().setFromPoints(points.map(p => new THREE.Vector3(p.x, 0, p.y)));
+        const material = new THREE.LineDashedMaterial({ color: 0x285141, dashSize: 0.9, gapSize: 0.45, transparent: true, opacity: 0.3 });
+        const ring = new THREE.Line(geometry, material);
+        ring.computeLineDistances();
+        ring.rotation.x = orbitTiltX;
+        ring.rotation.z = orbitTiltZ;
+        return ring;
+      };
+
+      const createCounterRing = () => {
+        const curve = new THREE.EllipseCurve(0, 0, 19.5, 16.0, 0, 2 * Math.PI, false, 0);
+        const points = curve.getPoints(140);
+        const geometry = new THREE.BufferGeometry().setFromPoints(points.map(p => new THREE.Vector3(p.x, 0, p.y)));
+        const material = new THREE.LineDashedMaterial({ color: 0x10b981, dashSize: 1.2, gapSize: 0.8, transparent: true, opacity: 0.18 });
+        const ring = new THREE.Line(geometry, material);
+        ring.computeLineDistances();
+        ring.rotation.x = -0.25;
+        ring.rotation.z = 0.2;
+        return ring;
+      };
+
+      worldGroup.add(createOrbitRing(), createCounterRing());
+
+      // 3. 5 TECH BADGES (WordPress, Elementor, WooCommerce, OpenAI, PHP)
+      const wpTexture = createCardCanvas(512, 512, ctx => {
+        drawBadgeBg(ctx, 512, 512, "#ffffff", "#21759b");
+        ctx.fillStyle = "#21759b";
+        ctx.beginPath();
+        ctx.arc(256, 230, 150, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 190px serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("W", 256, 240);
+        ctx.fillStyle = "#1e293b";
+        ctx.font = "bold 40px sans-serif";
+        ctx.fillText("WordPress", 256, 445);
+      });
+
+      const elementorTexture = createCardCanvas(512, 512, ctx => {
+        drawBadgeBg(ctx, 512, 512, "#ffffff", "#92003b");
+        ctx.fillStyle = "#92003b";
+        ctx.beginPath();
+        ctx.arc(256, 230, 150, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(175, 145, 28, 170);
+        ctx.fillRect(225, 145, 110, 28);
+        ctx.fillRect(225, 216, 110, 28);
+        ctx.fillRect(225, 287, 110, 28);
+        ctx.fillStyle = "#1e293b";
+        ctx.font = "bold 40px sans-serif";
+        ctx.fillText("Elementor Pro", 256, 445);
+      });
+
+      const wooTexture = createCardCanvas(512, 512, ctx => {
+        drawBadgeBg(ctx, 512, 512, "#ffffff", "#96588a");
+        ctx.fillStyle = "#96588a";
+        ctx.beginPath();
+        ctx.roundRect(145, 130, 222, 190, 22);
+        ctx.fill();
+        ctx.strokeStyle = "#96588a";
+        ctx.lineWidth = 16;
+        ctx.beginPath();
+        ctx.arc(256, 130, 55, Math.PI, 0, false);
+        ctx.stroke();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "900 68px sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("Woo", 256, 245);
+        ctx.fillStyle = "#1e293b";
+        ctx.font = "bold 38px sans-serif";
+        ctx.fillText("WooCommerce", 256, 445);
+      });
+
+      const openAiTexture = createCardCanvas(512, 512, ctx => {
+        drawBadgeBg(ctx, 512, 512, "#0f172a", "#10a37f");
+        ctx.save();
+        ctx.translate(256, 225);
+        ctx.strokeStyle = "#10a37f";
+        ctx.lineWidth = 13;
+        ctx.lineCap = "round";
+        for (let i = 0; i < 6; i++) {
+          ctx.rotate(Math.PI / 3);
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.lineTo(0, -100);
+          ctx.stroke();
+          ctx.fillStyle = "#34d399";
+          ctx.beginPath();
+          ctx.arc(0, -100, 16, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(0, 0, 32, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+        ctx.fillStyle = "#f8fafc";
+        ctx.font = "bold 40px sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("OpenAI API", 256, 445);
+      });
+
+      const phpTexture = createCardCanvas(512, 512, ctx => {
+        drawBadgeBg(ctx, 512, 512, "#ffffff", "#4F5B93");
+        ctx.fillStyle = "#4F5B93";
+        ctx.beginPath();
+        ctx.ellipse(256, 230, 170, 110, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 100px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("php", 256, 230);
+        ctx.fillStyle = "#1e293b";
+        ctx.font = "bold 40px sans-serif";
+        ctx.fillText("PHP 8.3", 256, 445);
+      });
+
+      const create3DBadge = (texture, w = 3.8, h = 3.8, d = 0.35) => {
         const group = new THREE.Group();
         const boxGeo = new THREE.BoxGeometry(w, h, d);
         const materials = [
-          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.4 }),
-          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.4 }),
-          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.4 }),
-          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.4 }),
+          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.5 }),
+          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.5 }),
+          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.5 }),
+          new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.3, metalness: 0.5 }),
           new THREE.MeshStandardMaterial({ map: texture, roughness: 0.2, metalness: 0.1 }),
           new THREE.MeshStandardMaterial({ color: 0x285141, roughness: 0.2, metalness: 0.7 }),
         ];
         const mesh = new THREE.Mesh(boxGeo, materials);
         group.add(mesh);
+
+        const glowGeo = new THREE.PlaneGeometry(w * 1.2, h * 1.2);
+        const glowMat = new THREE.MeshBasicMaterial({ color: 0x285141, transparent: true, opacity: 0.18, side: THREE.DoubleSide });
+        const glow = new THREE.Mesh(glowGeo, glowMat);
+        glow.position.z = -d * 0.6;
+        group.add(glow);
         return group;
       };
 
-      const nodeAvatar = createBadgeMesh(avatarTexture, 5.0, 5.0, 0.45);
-      const nodeWP = createBadgeMesh(wpTexture, 4.2, 4.2, 0.35);
-      const nodeAI = createBadgeMesh(aiTexture, 4.2, 4.2, 0.35);
-      const nodeClaude = createBadgeMesh(claudeTexture, 3.8, 3.8, 0.3);
-      const nodeNext = createBadgeMesh(nextTexture, 4.2, 4.2, 0.35);
+      const nodeWP = create3DBadge(wpTexture, 4.0, 4.0, 0.35);
+      const nodeElementor = create3DBadge(elementorTexture, 4.0, 4.0, 0.35);
+      const nodeWoo = create3DBadge(wooTexture, 3.8, 3.8, 0.35);
+      const nodeOpenAI = create3DBadge(openAiTexture, 4.0, 4.0, 0.35);
+      const nodePHP = create3DBadge(phpTexture, 3.8, 3.8, 0.35);
 
-      worldGroup.add(nodeAvatar, nodeWP, nodeAI, nodeClaude, nodeNext);
+      worldGroup.add(nodeWP, nodeElementor, nodeWoo, nodeOpenAI, nodePHP);
 
-      const orbitingNodes = [
-        { group: nodeAvatar, rx: 13, rz: 10.5, speed: 0.45, offset: 0, tx: 0.2, tz: -0.15, yAmp: 1.8, ySpd: 1.2, scale: 1.0 },
-        { group: nodeWP, rx: 16.5, rz: 13.5, speed: 0.38, offset: Math.PI * 0.4, tx: -0.25, tz: 0.2, yAmp: 2.2, ySpd: 1.4, scale: 0.95 },
-        { group: nodeAI, rx: 12.5, rz: 11, speed: 0.42, offset: Math.PI * 0.8, tx: 0.3, tz: -0.2, yAmp: 1.5, ySpd: 1.1, scale: 0.95 },
-        { group: nodeClaude, rx: 18.5, rz: 15, speed: 0.32, offset: Math.PI * 1.2, tx: -0.18, tz: 0.3, yAmp: 2.0, ySpd: 1.3, scale: 0.9 },
-        { group: nodeNext, rx: 14.5, rz: 12, speed: 0.4, offset: Math.PI * 1.6, tx: 0.15, tz: -0.25, yAmp: 1.6, ySpd: 1.5, scale: 0.92 }
+      const orbitNodes = [
+        { group: nodeWP, offset: 0, scale: 0.95 },
+        { group: nodeElementor, offset: (Math.PI * 2 * 1) / 5, scale: 0.95 },
+        { group: nodeWoo, offset: (Math.PI * 2 * 2) / 5, scale: 0.92 },
+        { group: nodeOpenAI, offset: (Math.PI * 2 * 3) / 5, scale: 0.95 },
+        { group: nodePHP, offset: (Math.PI * 2 * 4) / 5, scale: 0.92 },
       ];
 
-      // 5. STARFIELD PARTICLES
-      const pCount = 200;
+      // Starfield dust
+      const pCount = 180;
       const pGeo = new THREE.BufferGeometry();
       const pPos = new Float32Array(pCount * 3);
       for (let i = 0; i < pCount * 3; i += 3) {
-        pPos[i] = (Math.random() - 0.5) * 80;
-        pPos[i + 1] = (Math.random() - 0.5) * 60;
-        pPos[i + 2] = (Math.random() - 0.5) * 70;
+        pPos[i] = (Math.random() - 0.5) * 75;
+        pPos[i + 1] = (Math.random() - 0.5) * 55;
+        pPos[i + 2] = (Math.random() - 0.5) * 60;
       }
       pGeo.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
-      const pMat = new THREE.PointsMaterial({ size: 0.45, color: 0x285141, transparent: true, opacity: 0.4 });
-      const particles = new THREE.Points(pGeo, pMat);
-      worldGroup.add(particles);
+      const pMat = new THREE.PointsMaterial({ size: 0.45, color: 0x285141, transparent: true, opacity: 0.35 });
+      worldGroup.add(new THREE.Points(pGeo, pMat));
 
-      // 6. DRAG & PARALLAX
+      // Drag & Mouse Interactivity
       let isDragging = false, prevX = 0, prevY = 0;
       let targetRotX = 0, targetRotY = 0, curRotX = 0, curRotY = 0;
       let parallaxX = 0, parallaxY = 0;
 
       const onPointerDown = e => {
         isDragging = true;
-        const x = e.touches ? e.touches[0].clientX : e.clientX;
-        const y = e.touches ? e.touches[0].clientY : e.clientY;
-        prevX = x; prevY = y;
+        prevX = e.touches ? e.touches[0].clientX : e.clientX;
+        prevY = e.touches ? e.touches[0].clientY : e.clientY;
       };
 
       const onPointerMove = e => {
         const x = e.touches ? e.touches[0].clientX : e.clientX;
         const y = e.touches ? e.touches[0].clientY : e.clientY;
         const rect = container.getBoundingClientRect();
-        parallaxX = ((x - rect.left) / rect.width * 2 - 1) * 1.5;
-        parallaxY = -((y - rect.top) / rect.height * 2 - 1) * 1.0;
+        parallaxX = ((x - rect.left) / rect.width * 2 - 1) * 1.2;
+        parallaxY = -((y - rect.top) / rect.height * 2 - 1) * 0.8;
 
         if (isDragging) {
           targetRotY += (x - prevX) * 0.006;
@@ -981,21 +1341,26 @@
       window.addEventListener("touchmove", onPointerMove, { passive: true });
       window.addEventListener("touchend", onPointerUp);
 
-      // 7. RESIZE
       const onResize = () => {
         const w = container.clientWidth;
         const h = container.clientHeight;
         camera.aspect = w / h;
-        if (w < 640) { camera.position.z = 46; camera.position.y = 5; }
-        else if (w < 1024) { camera.position.z = 40; camera.position.y = 7; }
-        else { camera.position.z = 36; camera.position.y = 8; }
+        if (w < 640) {
+          camera.position.z = 48;
+          centerGroup.scale.set(0.85, 0.85, 0.85);
+        } else if (w < 1024) {
+          camera.position.z = 42;
+          centerGroup.scale.set(0.95, 0.95, 0.95);
+        } else {
+          camera.position.z = 38;
+          centerGroup.scale.set(1.0, 1.0, 1.0);
+        }
         camera.updateProjectionMatrix();
         renderer.setSize(w, h);
       };
       window.addEventListener("resize", onResize);
       onResize();
 
-      // 8. ANIMATE LOOP
       const clock = new THREE.Clock();
       function animate() {
         requestAnimationFrame(animate);
@@ -1004,37 +1369,36 @@
 
         curRotX += (targetRotX - curRotX) * 0.06;
         curRotY += (targetRotY - curRotY) * 0.06;
-        worldGroup.rotation.x = curRotX + parallaxY * 0.08;
-        worldGroup.rotation.y = curRotY + parallaxX * 0.12;
+        worldGroup.rotation.x = curRotX + parallaxY * 0.06;
+        worldGroup.rotation.y = curRotY + parallaxX * 0.1;
 
-        icoMesh.rotation.x += delta * 0.2;
-        icoMesh.rotation.y += delta * 0.3;
-        coreSphere.rotation.y -= delta * 0.15;
-        const pulse = 1 + Math.sin(elapsedTime * 2.0) * 0.04;
-        coreGroup.scale.set(pulse, pulse, pulse);
+        centerDisc.position.y = Math.sin(elapsedTime * 1.5) * 0.35;
+        centerHalo.rotation.z += delta * 0.2;
+        innerPulseRing.rotation.z -= delta * 0.15;
+        const pulse = 1 + Math.sin(elapsedTime * 2.2) * 0.03;
+        innerPulseRing.scale.set(pulse, pulse, pulse);
 
-        const speedMultiplier = prefersReducedMotion ? 0.05 : 0.6;
-        const globalOrbit = elapsedTime * speedMultiplier;
+        const orbitSpeed = prefersReducedMotion ? 0.04 : 0.38;
+        const globalOrbit = elapsedTime * orbitSpeed;
 
-        orbitingNodes.forEach((node, idx) => {
-          const angle = globalOrbit * node.speed + node.offset;
-          const px = Math.cos(angle) * node.rx;
-          const pz = Math.sin(angle) * node.rz;
-          const py = Math.sin(elapsedTime * node.ySpd + idx) * node.yAmp + pz * Math.sin(node.tx) + px * Math.sin(node.tz);
+        orbitNodes.forEach(node => {
+          const angle = globalOrbit + node.offset;
+          const px = Math.cos(angle) * orbitRadiusX;
+          const pz = Math.sin(angle) * orbitRadiusZ;
+          const tiltedY = pz * Math.sin(orbitTiltX) + px * Math.sin(orbitTiltZ);
+          const finalX = px * Math.cos(orbitTiltZ) - pz * Math.sin(orbitTiltX);
+          const finalZ = pz * Math.cos(orbitTiltX) + px * Math.sin(orbitTiltZ);
 
-          node.group.position.x = px * Math.cos(node.tz) - pz * Math.sin(node.tx);
-          node.group.position.z = pz * Math.cos(node.tx) + px * Math.sin(node.tz);
-          node.group.position.y = py;
-
+          node.group.position.x = finalX;
+          node.group.position.z = finalZ;
+          node.group.position.y = tiltedY + Math.sin(elapsedTime * 1.8 + node.offset) * 0.4;
           node.group.quaternion.copy(camera.quaternion);
-          node.group.rotateZ(Math.sin(elapsedTime * 1.5 + idx) * 0.08);
 
           const dist = node.group.position.distanceTo(camera.position);
-          const dynScale = Math.max(0.65, Math.min(1.25, 36 / dist)) * node.scale;
-          node.group.scale.set(dynScale, dynScale, dynScale);
+          const depthScale = Math.max(0.7, Math.min(1.2, 38 / dist)) * node.scale;
+          node.group.scale.set(depthScale, depthScale, depthScale);
         });
 
-        particles.rotation.y += delta * 0.03;
         renderer.render(scene, camera);
       }
       animate();
@@ -1042,4 +1406,3 @@
   </script>
 </body>
 </html>
-

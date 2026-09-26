@@ -32,8 +32,10 @@ export const siteConfig = {
   email: "zeeshanmalikoficial@gmail.com",
   whatsappUrl: "https://wa.me/923057046739",
   whatsappDisplay: "+92 305 7046739",
+  phone: "+92 305 7046739",
   location: "Worldwide Delivery · Based in Pakistan",
   availability: "Available for Select Projects",
+  profileImage: "/images/e081a0e1-79db-4081-ba5f-0b153db2e6c4.png",
 };
 
 export const heroAnchors: CapabilityAnchor[] = [
@@ -115,66 +117,66 @@ export const servicesData: ServiceItem[] = [
 
 export const projectsData: ProjectItem[] = [
   {
-    id: "aura-health",
-    title: "Aura Health & MedTech",
-    subtitle: "AI-Powered Patient Triage & Custom WordPress Portal",
+    id: "propmix",
+    title: "PropMix Real Estate",
+    subtitle: "Real Estate Directory & Multi-Agent Listing Platform",
     description:
-      "A medical and wellness digital portal engineered with custom patient intake workflows, headless CMS content delivery, and automated symptom triage.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    url: "https://aurahealth-demo.example.com",
-    technologies: ["WordPress", "Next.js", "OpenAI API", "Tailwind CSS", "REST API"],
-    services: ["Custom Portal Architecture", "AI Intake Workflow", "Headless CMS", "Core Web Vitals"],
+      "A dynamic real-estate portal engineered with custom listing workflows, front-end submission forms, agent dashboards, and advanced filtering.",
+    image: "/images/een-1080-x-1080-px-3.png",
+    url: "https://dev-prop-mix.pantheonsite.io",
+    technologies: ["WordPress", "JetEngine", "PHP", "Elementor Pro", "REST API"],
+    services: ["CMS Architecture", "Custom Field Modeling", "Front-end UX", "Speed Optimization"],
     challenge:
-      "A clinic network struggled with fragmented patient onboarding, sluggish mobile loading, and manual intake questionnaires that created provider scheduling bottlenecks.",
+      "The client required a structured property directory where agents could submit and manage real estate listings directly from the front-end without accessing the WordPress admin dashboard.",
     solution:
-      "Architected a secure headless WordPress backend coupled with a responsive Next.js frontend and an OpenAI triage assistant that dynamically clarifies symptoms and routes appointments.",
+      "Architected custom post types and relational taxonomies via JetEngine, developed role-restricted front-end posting forms, and implemented faceted AJAX search queries for instantaneous property filtering.",
     result:
-      "Reduced intake completion drop-offs by 44%, achieved a 98/100 Core Web Vitals score, and automated appointment pre-screening.",
+      "Delivered a multi-agent directory platform with streamlined content moderation and responsive search performance across devices.",
     technicalHighlights: [
-      { label: "Core Web Vitals", value: "98/100 Mobile Score" },
-      { label: "AI Integration", value: "Automated Triage Flow" },
+      { label: "Architecture", value: "Custom CPT + Taxonomies" },
+      { label: "Front-end", value: "Role-aware Agent Dashboard" },
     ],
   },
   {
-    id: "nexus-luxury",
-    title: "Nexus Luxury Apparel",
-    subtitle: "High-Volume Direct-to-Consumer WooCommerce Architecture",
+    id: "zaiqabites",
+    title: "ZaiqaBites Hospitality",
+    subtitle: "Hospitality & Digital Direct-Ordering Experience",
     description:
-      "An editorial apparel boutique engineered for zero-friction browsing, instant color swatch previews, and accelerated mobile single-page checkout.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
-    url: "https://nexusluxury-demo.example.com",
-    technologies: ["WooCommerce", "WordPress", "Stripe API", "JetEngine", "Tailwind CSS"],
+      "A fast-loading digital restaurant experience centered on visual menu exploration, dietary filtering, and direct customer ordering.",
+    image: "/images/een-1080-x-1080-px-5.png",
+    url: "https://dev-zaiqa-bites.pantheonsite.io",
+    technologies: ["WordPress", "Elementor Pro", "WooCommerce", "Custom PHP", "Mobile UX"],
+    services: ["UI/UX Engineering", "Menu Architecture", "Mobile Optimization", "Local SEO"],
+    challenge:
+      "A complex multi-category restaurant menu was cumbersome on mobile devices, creating friction for customers looking to place direct orders quickly.",
+    solution:
+      "Re-engineered the menu showcase with a clear category navigation bar, responsive nutritional highlights, and an intuitive direct-to-WhatsApp/call ordering workflow.",
+    result:
+      "Built a modern culinary showcase that makes dish discovery and direct ordering straightforward on mobile screens.",
+    technicalHighlights: [
+      { label: "Mobile UX", value: "Sticky Category Navigation" },
+      { label: "Ordering Flow", value: "Direct Conversion Path" },
+    ],
+  },
+  {
+    id: "rivaah",
+    title: "Rivaah Fashion",
+    subtitle: "Editorial Luxury Fashion & High-Speed E-Commerce",
+    description:
+      "An editorial apparel boutique combining minimalist typography with curated product lookbooks and streamlined checkout flows.",
+    image: "/images/een-1080-x-1080-px-6.png",
+    url: "https://dev-rivaah.pantheonsite.io",
+    technologies: ["WooCommerce", "WordPress", "Custom PHP", "Stripe API", "UX Architecture"],
     services: ["Store Architecture", "Checkout UX", "Catalog Optimization", "Speed Engineering"],
     challenge:
-      "High checkout abandonment on mobile devices due to slow catalog filtering, unoptimized asset payloads, and disjointed multi-step checkout forms.",
+      "The apparel brand needed an e-commerce storefront with the visual restraint of high-end editorial design while remaining simple for an in-house team to manage.",
     solution:
-      "Developed a custom lightweight WooCommerce theme with instantaneous AJAX attribute filtering, responsive lookbook galleries, and a frictionless single-step Stripe payment drawer.",
+      "Developed a custom WooCommerce theme with a neutral color palette, generous whitespace, optimized product imagery, and an uncluttered single-page checkout.",
     result:
-      "Achieved sub-850ms page transitions, increased mobile checkout completion by 32%, and safely accommodated flash-sale traffic spikes.",
+      "Delivered an editorial boutique storefront optimized for mobile browsing and fast checkout completion.",
     technicalHighlights: [
-      { label: "Performance", value: "<850ms First Contentful Paint" },
-      { label: "Checkout", value: "1-Step Frictionless Funnel" },
-    ],
-  },
-  {
-    id: "urban-edge",
-    title: "UrbanEdge Real Estate",
-    subtitle: "Multi-Agent Commercial & Residential Directory Platform",
-    description:
-      "A full-scale real estate directory platform featuring front-end agent submissions, relational taxonomy search, and interactive geolocation maps.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-    url: "https://urbanedge-demo.example.com",
-    technologies: ["WordPress", "JetEngine", "PHP 8.3", "REST APIs", "Mapbox GL"],
-    services: ["Directory Architecture", "Custom Field Modeling", "Agent Dashboard UX", "Technical SEO"],
-    challenge:
-      "Agents lacked a self-serve front-end listing dashboard, forcing staff into manual listings moderation while prospective buyers experienced laggy directory filtering.",
-    solution:
-      "Built relational custom post types via JetEngine, secure role-restricted agent management portals, and faceted AJAX queries with interactive map pinning.",
-    result:
-      "Scaled the portal to 4,500+ dynamic listings with sub-second search responses and streamlined agent onboarding without WP admin access.",
-    technicalHighlights: [
-      { label: "Data Architecture", value: "Relational CPTs & Taxonomies" },
-      { label: "Search Speed", value: "Instantaneous AJAX Facets" },
+      { label: "Storefront", value: "Editorial Grid Architecture" },
+      { label: "Checkout", value: "Friction-free UX" },
     ],
   },
   {
@@ -183,9 +185,9 @@ export const projectsData: ProjectItem[] = [
     subtitle: "Intelligent Customer Support & Lead Routing Web App",
     description:
       "An automated customer intelligence system integrating conversational AI assistants into WordPress websites to qualify inbound B2B sales leads.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    url: "https://synthetix-demo.example.com",
-    technologies: ["WordPress", "Next.js", "OpenAI Assistant API", "TypeScript", "Tailwind CSS"],
+    image: "/images/een-1080-x-1080-px-4.png",
+    url: "https://wa.me/923057046739",
+    technologies: ["WordPress", "Next.js", "OpenAI API", "PHP", "Tailwind CSS"],
     services: ["AI API Engineering", "CRM Webhooks", "Conversational UX", "Analytics Dashboard"],
     challenge:
       "Inbound website inquiries faced up to 6 hours of triage latency during peak hours, causing high-value prospective clients to bounce to competitors.",
