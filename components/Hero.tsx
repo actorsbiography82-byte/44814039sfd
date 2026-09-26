@@ -116,11 +116,11 @@ export function Hero() {
           {/* ========================================================= */}
           {/* 2. RIGHT COLUMN: UPRIGHT PORTRAIT + DEDICATED 3D TECH ORBIT */}
           {/* ========================================================= */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
-            <div className="relative w-full max-w-[440px] sm:max-w-[460px] aspect-square flex items-center justify-center">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative overflow-visible">
+            <div className="relative w-full max-w-[460px] sm:max-w-[500px] xl:max-w-[520px] aspect-square flex items-center justify-center overflow-visible">
               
-              {/* 3D Tech Orbit Canvas strictly confined inside this visual stage */}
-              <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+              {/* 3D Tech Orbit Canvas with expanded bounding box and unconstrained overflow */}
+              <div className="absolute -inset-8 sm:-inset-12 w-[calc(100%+4rem)] sm:w-[calc(100%+6rem)] h-[calc(100%+4rem)] sm:h-[calc(100%+6rem)] z-0 overflow-visible pointer-events-auto">
                 <Hero3DCanvas avatarUrl={siteConfig.profileImage} />
               </div>
 

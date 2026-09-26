@@ -457,10 +457,10 @@
           </div>
 
           <!-- RIGHT COLUMN: FIXED UPRIGHT PORTRAIT + DEDICATED 3D TECH ORBIT -->
-          <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
-            <div class="relative w-full max-w-[440px] sm:max-w-[460px] aspect-square flex items-center justify-center mx-auto">
-              <!-- 3D Tech Orbit Canvas Container -->
-              <div id="hero-3d-canvas-container" class="absolute inset-0 w-full h-full z-0 overflow-hidden cursor-grab active:cursor-grabbing select-none" style="touch-action: none;" title="Drag to rotate 3D tech orbit"></div>
+          <div class="lg:col-span-5 flex flex-col items-center justify-center relative overflow-visible">
+            <div class="relative w-full max-w-[460px] sm:max-w-[500px] xl:max-w-[520px] aspect-square flex items-center justify-center mx-auto overflow-visible">
+              <!-- 3D Tech Orbit Canvas Container with expanded bounding area and unconstrained overflow -->
+              <div id="hero-3d-canvas-container" class="absolute -inset-8 sm:-inset-12 w-[calc(100%+4rem)] sm:w-[calc(100%+6rem)] h-[calc(100%+4rem)] sm:h-[calc(100%+6rem)] z-0 overflow-visible cursor-grab active:cursor-grabbing select-none" style="touch-action: none;" title="Drag to rotate 3D tech orbit"></div>
 
               <!-- Fixed, Upright, Pristine Profile Picture Container -->
               <div class="relative z-10 flex flex-col items-center pointer-events-none select-none">
@@ -1016,7 +1016,7 @@
       scene.fog = new THREE.FogExp2(0xf8f7f4, 0.0016);
 
       const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-      camera.position.set(0, 0, 38);
+      camera.position.set(0, 0, 35);
 
       // RENDERER
       const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
@@ -1067,10 +1067,10 @@
       scene.add(centerPointLight);
 
       // 2. ORBITING RINGS
-      const orbitRadiusX = 13.2;
-      const orbitRadiusZ = 10.8;
-      const orbitTiltX = 0.32;
-      const orbitTiltZ = -0.12;
+      const orbitRadiusX = 11.2;
+      const orbitRadiusZ = 8.8;
+      const orbitTiltX = 0.28;
+      const orbitTiltZ = -0.10;
 
       const createOrbitRing = () => {
         const curve = new THREE.EllipseCurve(0, 0, orbitRadiusX, orbitRadiusZ, 0, 2 * Math.PI, false, 0);
@@ -1218,11 +1218,11 @@
         return group;
       };
 
-      const nodeWP = create3DBadge(wpTexture, 4.0, 4.0, 0.35);
-      const nodeElementor = create3DBadge(elementorTexture, 4.0, 4.0, 0.35);
-      const nodeWoo = create3DBadge(wooTexture, 3.8, 3.8, 0.35);
-      const nodeOpenAI = create3DBadge(openAiTexture, 4.0, 4.0, 0.35);
-      const nodePHP = create3DBadge(phpTexture, 3.8, 3.8, 0.35);
+      const nodeWP = create3DBadge(wpTexture, 3.3, 3.3, 0.35);
+      const nodeElementor = create3DBadge(elementorTexture, 3.3, 3.3, 0.35);
+      const nodeWoo = create3DBadge(wooTexture, 3.3, 3.3, 0.35);
+      const nodeOpenAI = create3DBadge(openAiTexture, 3.3, 3.3, 0.35);
+      const nodePHP = create3DBadge(phpTexture, 3.3, 3.3, 0.35);
 
       worldGroup.add(nodeWP, nodeElementor, nodeWoo, nodeOpenAI, nodePHP);
 

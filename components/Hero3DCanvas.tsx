@@ -29,7 +29,7 @@ export function Hero3DCanvas({
       0.1,
       1000
     );
-    camera.position.set(0, 0, 32);
+    camera.position.set(0, 0, 35);
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -97,10 +97,10 @@ export function Hero3DCanvas({
     };
 
     // 4. SUBTLE ORBIT PATH RINGS (Tilted in 3D space around the upright avatar)
-    const orbitRadiusX = 13.2;
-    const orbitRadiusZ = 10.8;
-    const orbitTiltX = 0.32; // ~18 deg tilt
-    const orbitTiltZ = -0.12; // ~7 deg tilt
+    const orbitRadiusX = 11.2;
+    const orbitRadiusZ = 8.8;
+    const orbitTiltX = 0.28; // ~16 deg tilt
+    const orbitTiltZ = -0.10; // ~6 deg tilt
 
     const createOrbitRing = () => {
       const curve = new THREE.EllipseCurve(0, 0, orbitRadiusX, orbitRadiusZ, 0, 2 * Math.PI, false, 0);
@@ -260,9 +260,9 @@ export function Hero3DCanvas({
 
     const createBadgeMesh = (frontTexture: THREE.Texture) => {
       const group = new THREE.Group();
-      const width = 3.6;
-      const height = 3.6;
-      const depth = 0.45;
+      const width = 3.3;
+      const height = 3.3;
+      const depth = 0.4;
 
       const boxGeo = new THREE.BoxGeometry(width, height, depth);
 
@@ -398,14 +398,14 @@ export function Hero3DCanvas({
 
       camera.aspect = w / h;
 
-      if (w < 400) {
-        camera.position.z = 36;
+      if (w < 420) {
+        camera.position.z = 38;
         orbitGroup.scale.set(0.85, 0.85, 0.85);
-      } else if (w < 600) {
-        camera.position.z = 32;
-        orbitGroup.scale.set(0.95, 0.95, 0.95);
+      } else if (w < 640) {
+        camera.position.z = 36;
+        orbitGroup.scale.set(0.92, 0.92, 0.92);
       } else {
-        camera.position.z = 30;
+        camera.position.z = 34.5;
         orbitGroup.scale.set(1.0, 1.0, 1.0);
       }
 
