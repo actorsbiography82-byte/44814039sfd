@@ -384,115 +384,126 @@
 
   <main id="main-content">
     <!-- ========================================================= -->
-    <!-- 2. HERO: DEAD-CENTER PROFILE PICTURE & 3D ORBITING RING -->
+    <!-- 2. HERO: CRISP 2-COLUMN LAYOUT + FIXED UPRIGHT PORTRAIT & 3D TECH ORBIT -->
     <!-- ========================================================= -->
-    <section id="home" class="relative min-h-[95vh] sm:min-h-screen w-full flex flex-col justify-center overflow-hidden pt-28 pb-16 lg:py-24">
+    <section id="home" class="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden pt-28 pb-16 lg:py-24 bg-[#f8f7f4]">
       
-      <!-- 3D Canvas Background Container -->
-      <div id="hero-3d-canvas-container" class="absolute inset-0 w-full h-full z-0 overflow-hidden cursor-grab active:cursor-grabbing select-none" style="touch-action: none;">
-        <!-- Radial vignette -->
-        <div class="pointer-events-none absolute inset-0 opacity-70" style="background: radial-gradient(ellipse at center, rgba(248, 247, 244, 0) 35%, rgba(248, 247, 244, 0.75) 80%, rgba(248, 247, 244, 0.98) 100%);"></div>
-        
-        <!-- Live status hint -->
-        <div class="absolute bottom-5 right-5 sm:bottom-8 sm:right-8 z-20 pointer-events-none">
-          <div class="flex items-center gap-2 rounded-full border border-stone-200/90 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-stone-800 shadow-md backdrop-blur-md">
-            <span class="h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <span>Profile Dead-Center · Orbiting WordPress, Elementor, WooCommerce, OpenAI & PHP</span>
+      <!-- Ambient background glows -->
+      <div class="pointer-events-none absolute -top-24 -left-20 w-96 h-96 rounded-full bg-emerald-100/40 blur-3xl -z-10" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute top-1/2 -right-20 w-[450px] h-[450px] rounded-full bg-emerald-50/50 blur-3xl -z-10" aria-hidden="true"></div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 xl:gap-14 items-center">
+          
+          <!-- LEFT COLUMN: CRISP, HIGH-READABILITY TYPOGRAPHY & CTAs -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left z-10">
+            <!-- Status Pill -->
+            <div class="inline-flex items-center gap-2 rounded-full border border-stone-200/90 bg-white/95 px-4 py-1.5 text-xs font-semibold text-brand shadow-xs backdrop-blur-md">
+              <span class="relative flex h-2 w-2" aria-hidden="true">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Available for Select Projects</span>
+              <span class="text-stone-300">|</span>
+              <span class="text-stone-500 font-normal">WordPress & AI Integrations</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="mt-5 text-4xl sm:text-5xl lg:text-[54px] xl:text-6xl font-black tracking-tight text-stone-900 leading-[1.08]">
+              Zeeshan Web Solution
+              <span class="block mt-2.5 text-2xl sm:text-3xl lg:text-4xl font-bold text-brand font-sans tracking-normal">
+                WordPress Developer & AI Website Developer
+              </span>
+            </h1>
+
+            <!-- Lead Description -->
+            <p class="mt-5 text-base sm:text-lg leading-relaxed text-stone-700 max-w-2xl font-normal">
+              I engineer custom WordPress websites, WooCommerce stores, and AI-enabled web workflows for founders, businesses, and digital agencies worldwide. Focused on clean code, fast page loads, and clear conversion paths.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#case-studies" class="inline-flex items-center gap-2.5 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-emerald-950/15 transition-all duration-200 hover:bg-brand-hover hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
+                <span>View Selected Work</span>
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+
+              <a href="https://wa.me/923057046739" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-stone-800 shadow-xs transition-all duration-200 hover:bg-stone-50 hover:border-stone-400 hover:-translate-y-0.5 active:translate-y-0">
+                <span>Discuss Your Project</span>
+              </a>
+            </div>
+
+            <!-- Capability Proof Anchors -->
+            <dl class="mt-10 pt-8 border-t border-stone-200/90 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full" aria-label="Core capability areas">
+              <div class="space-y-1">
+                <dd class="text-sm font-bold text-stone-900 tracking-tight">Custom WordPress</dd>
+                <dt class="text-xs text-stone-500 font-medium">Themes & Dynamic CPTs</dt>
+              </div>
+              <div class="space-y-1">
+                <dd class="text-sm font-bold text-stone-900 tracking-tight">WooCommerce</dd>
+                <dt class="text-xs text-stone-500 font-medium">Store & Checkout UX</dt>
+              </div>
+              <div class="space-y-1">
+                <dd class="text-sm font-bold text-stone-900 tracking-tight">AI Integrations</dd>
+                <dt class="text-xs text-stone-500 font-medium">Workflows & APIs</dt>
+              </div>
+              <div class="space-y-1">
+                <dd class="text-sm font-bold text-stone-900 tracking-tight">Core Web Vitals</dd>
+                <dt class="text-xs text-stone-500 font-medium">Speed & SEO Audits</dt>
+              </div>
+            </dl>
           </div>
+
+          <!-- RIGHT COLUMN: FIXED UPRIGHT PORTRAIT + DEDICATED 3D TECH ORBIT -->
+          <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+            <div class="relative w-full max-w-[440px] sm:max-w-[460px] aspect-square flex items-center justify-center mx-auto">
+              <!-- 3D Tech Orbit Canvas Container -->
+              <div id="hero-3d-canvas-container" class="absolute inset-0 w-full h-full z-0 overflow-hidden cursor-grab active:cursor-grabbing select-none" style="touch-action: none;" title="Drag to rotate 3D tech orbit"></div>
+
+              <!-- Fixed, Upright, Pristine Profile Picture Container -->
+              <div class="relative z-10 flex flex-col items-center pointer-events-none select-none">
+                <!-- Ambient Glow Ring -->
+                <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-emerald-500/20 via-teal-400/15 to-transparent blur-md -z-10" aria-hidden="true"></div>
+
+                <!-- Upright Avatar Frame -->
+                <div class="relative w-44 h-44 sm:w-52 sm:h-52 xl:w-56 xl:h-56 rounded-full p-1.5 bg-gradient-to-b from-white via-white to-stone-200 shadow-2xl shadow-[#141716]/15 ring-2 ring-[#285141]/20">
+                  <div class="relative w-full h-full rounded-full overflow-hidden bg-stone-100">
+                    <img
+                      src="/images/e081a0e1-79db-4081-ba5f-0b153db2e6c4.png"
+                      alt="Zeeshan - WordPress & AI Website Developer"
+                      width="448"
+                      height="448"
+                      class="w-full h-full object-cover object-center pointer-events-auto"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+
+                <!-- Upright Online Badge -->
+                <div class="mt-3.5 pointer-events-auto inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-semibold text-stone-800 shadow-md border border-stone-200 backdrop-blur-md">
+                  <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                  <span>Zeeshan · Ready to Build</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Subtle Tech Stack Badges Indicators -->
+            <div class="mt-2 flex flex-wrap items-center justify-center gap-2 text-[11px] text-stone-600 font-medium">
+              <span class="inline-flex items-center gap-1 bg-white/80 px-2.5 py-0.5 rounded-md border border-stone-200/80 shadow-2xs">WordPress</span>
+              <span class="inline-flex items-center gap-1 bg-white/80 px-2.5 py-0.5 rounded-md border border-stone-200/80 shadow-2xs">Elementor</span>
+              <span class="inline-flex items-center gap-1 bg-white/80 px-2.5 py-0.5 rounded-md border border-stone-200/80 shadow-2xs">WooCommerce</span>
+              <span class="inline-flex items-center gap-1 bg-white/80 px-2.5 py-0.5 rounded-md border border-stone-200/80 shadow-2xs">OpenAI</span>
+              <span class="inline-flex items-center gap-1 bg-white/80 px-2.5 py-0.5 rounded-md border border-stone-200/80 shadow-2xs">PHP</span>
+            </div>
+          </div>
+
         </div>
-      </div>
-
-      <!-- Top and bottom lighting gradients -->
-      <div class="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#f8f7f4] via-[#f8f7f4]/60 to-transparent z-[1]"></div>
-      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#f8f7f4] via-[#f8f7f4]/70 to-transparent z-[1]"></div>
-
-      <!-- Centered Overlay Content Framing the Dead-Center Avatar -->
-      <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 w-full pointer-events-none flex flex-col items-center text-center">
-        
-        <!-- Eyebrow Pill -->
-        <div class="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-stone-200/90 bg-white/85 px-4 py-1.5 text-xs font-semibold text-brand shadow-sm backdrop-blur-md">
-          <svg class="h-3.5 w-3.5 text-emerald-700 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-          </svg>
-          <span>WordPress Development · WooCommerce · AI Integrations</span>
-        </div>
-
-        <!-- Headline -->
-        <h1 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[1.12] pointer-events-auto">
-          Zeeshan Web Solution
-          <span class="block mt-2 text-xl sm:text-2xl lg:text-3xl font-semibold text-brand font-sans tracking-normal">
-            WordPress Developer & AI Website Developer
-          </span>
-        </h1>
-
-        <!-- Lead Description -->
-        <p class="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-stone-700 pointer-events-auto">
-          I engineer custom WordPress websites, WooCommerce stores, and AI-enabled web workflows for founders, businesses, and digital agencies worldwide. Focused on clean code, fast page loads, and clear conversion paths.
-        </p>
-
-        <!-- Action CTAs -->
-        <div class="mt-6 flex flex-wrap items-center justify-center gap-3.5 pointer-events-auto">
-          <a href="#work" class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-950/15 transition-all duration-200 hover:bg-brand-hover hover:shadow-xl hover:-translate-y-0.5">
-            <span>View Selected Work</span>
-            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-
-          <a href="https://wa.me/923057046739" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-stone-300 bg-white/95 px-6 py-3.5 text-sm font-semibold text-stone-800 shadow-sm transition-all duration-200 hover:bg-stone-50 hover:border-stone-400 hover:-translate-y-0.5">
-            <span>Discuss Your Project</span>
-          </a>
-        </div>
-
-        <!-- Dead-Center 3D Stage Clearance Area -->
-        <div class="w-full h-48 sm:h-64 my-2 pointer-events-none" aria-hidden="true"></div>
-
-        <!-- 3D Orbiting Architecture Badges Legend -->
-        <div class="pointer-events-auto inline-flex flex-wrap items-center justify-center gap-2.5 rounded-2xl border border-stone-200/90 bg-white/90 p-2.5 text-xs font-semibold text-stone-800 shadow-md backdrop-blur-md">
-          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-sky-50 text-sky-900 border border-sky-200/60">
-            <span class="h-2 w-2 rounded-full bg-sky-500"></span>
-            <span>WordPress</span>
-          </div>
-          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-rose-50 text-rose-900 border border-rose-200/60">
-            <span class="h-2 w-2 rounded-full bg-[#92003b]"></span>
-            <span>Elementor Pro</span>
-          </div>
-          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-purple-50 text-purple-900 border border-purple-200/60">
-            <span class="h-2 w-2 rounded-full bg-[#96588a]"></span>
-            <span>WooCommerce</span>
-          </div>
-          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-200/60">
-            <span class="h-2 w-2 rounded-full bg-[#10a37f]"></span>
-            <span>OpenAI API</span>
-          </div>
-          <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-indigo-50 text-indigo-900 border border-indigo-200/60">
-            <span class="h-2 w-2 rounded-full bg-[#4F5B93]"></span>
-            <span>PHP 8.3</span>
-          </div>
-        </div>
-
-        <!-- Capability Proof Anchors -->
-        <dl class="mt-8 pt-6 border-t border-stone-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 w-full max-w-4xl pointer-events-auto text-left" aria-label="Core capability areas">
-          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
-            <dd class="text-sm font-bold text-stone-900">Custom WordPress</dd>
-            <dt class="text-xs text-stone-500 font-medium">Themes & Dynamic CPTs</dt>
-          </div>
-          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
-            <dd class="text-sm font-bold text-stone-900">WooCommerce</dd>
-            <dt class="text-xs text-stone-500 font-medium">Store & Checkout UX</dt>
-          </div>
-          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
-            <dd class="text-sm font-bold text-stone-900">AI Integrations</dd>
-            <dt class="text-xs text-stone-500 font-medium">Workflows & APIs</dt>
-          </div>
-          <div class="space-y-1 bg-white/60 sm:bg-transparent p-3 sm:p-0 rounded-xl border border-stone-200/50 sm:border-0">
-            <dd class="text-sm font-bold text-stone-900">Core Web Vitals</dd>
-            <dt class="text-xs text-stone-500 font-medium">Speed & SEO Audits</dt>
-          </div>
-        </dl>
-
       </div>
     </section>
+
 
     <!-- ========================================================= -->
     <!-- 3. 4 CASE STUDY PROJECT CARDS WITH MODERN BROWSER MOCKUPS -->
@@ -1050,87 +1061,16 @@
         ctx.stroke();
       };
 
-      // 1. DEAD-CENTER AVATAR BADGE (Position 0, 0, 0)
-      const avatarCanvas = document.createElement("canvas");
-      avatarCanvas.width = 512;
-      avatarCanvas.height = 512;
-      const avatarCtx = avatarCanvas.getContext("2d");
-
-      const renderAvatar = (img) => {
-        avatarCtx.clearRect(0, 0, 512, 512);
-        avatarCtx.fillStyle = "#ffffff";
-        avatarCtx.beginPath();
-        avatarCtx.arc(256, 256, 246, 0, Math.PI * 2);
-        avatarCtx.fill();
-        avatarCtx.strokeStyle = "#285141";
-        avatarCtx.lineWidth = 14;
-        avatarCtx.stroke();
-
-        if (img) {
-          avatarCtx.save();
-          avatarCtx.beginPath();
-          avatarCtx.arc(256, 256, 236, 0, Math.PI * 2);
-          avatarCtx.clip();
-          avatarCtx.drawImage(img, 20, 20, 472, 472);
-          avatarCtx.restore();
-        } else {
-          avatarCtx.fillStyle = "#285141";
-          avatarCtx.beginPath();
-          avatarCtx.arc(256, 256, 236, 0, Math.PI * 2);
-          avatarCtx.fill();
-          avatarCtx.fillStyle = "#ffffff";
-          avatarCtx.font = "bold 150px sans-serif";
-          avatarCtx.textAlign = "center";
-          avatarCtx.textBaseline = "middle";
-          avatarCtx.fillText("Z", 256, 256);
-        }
-
-        avatarCtx.fillStyle = "#10b981";
-        avatarCtx.beginPath();
-        avatarCtx.arc(410, 410, 34, 0, Math.PI * 2);
-        avatarCtx.fill();
-        avatarCtx.strokeStyle = "#ffffff";
-        avatarCtx.lineWidth = 8;
-        avatarCtx.stroke();
-      };
-
-      renderAvatar();
-      const avatarTexture = new THREE.CanvasTexture(avatarCanvas);
-      const profileImg = new Image();
-      profileImg.src = "/images/e081a0e1-79db-4081-ba5f-0b153db2e6c4.png";
-      profileImg.onload = () => {
-        renderAvatar(profileImg);
-        avatarTexture.needsUpdate = true;
-      };
-
-      const centerGroup = new THREE.Group();
-      worldGroup.add(centerGroup);
-
-      const discGeo = new THREE.CylinderGeometry(5.4, 5.4, 0.6, 64);
-      const discSideMat = new THREE.MeshStandardMaterial({ color: 0x1e3e32, roughness: 0.25, metalness: 0.85 });
-      const discFrontMat = new THREE.MeshStandardMaterial({ map: avatarTexture, roughness: 0.15, metalness: 0.1 });
-      const discBackMat = new THREE.MeshStandardMaterial({ color: 0x141716, roughness: 0.3, metalness: 0.8 });
-      const centerDisc = new THREE.Mesh(discGeo, [discSideMat, discFrontMat, discBackMat]);
-      centerDisc.rotation.x = Math.PI / 2;
-      centerGroup.add(centerDisc);
-
-      const haloGeo = new THREE.RingGeometry(5.7, 6.2, 64);
-      const haloMat = new THREE.MeshBasicMaterial({ color: 0x285141, side: THREE.DoubleSide, transparent: true, opacity: 0.45 });
-      const centerHalo = new THREE.Mesh(haloGeo, haloMat);
-      centerHalo.position.z = -0.35;
-      centerGroup.add(centerHalo);
-
-      const innerPulseGeo = new THREE.RingGeometry(6.6, 6.8, 64);
-      const innerPulseMat = new THREE.MeshBasicMaterial({ color: 0x10b981, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
-      const innerPulseRing = new THREE.Mesh(innerPulseGeo, innerPulseMat);
-      innerPulseRing.position.z = -0.4;
-      centerGroup.add(innerPulseRing);
+      // 1. SUBTLE CENTER POINT LIGHT (Hollow center for the fixed, upright HTML avatar)
+      const centerPointLight = new THREE.PointLight(0x10b981, 1.8, 25);
+      centerPointLight.position.set(0, 0, 2);
+      scene.add(centerPointLight);
 
       // 2. ORBITING RINGS
-      const orbitRadiusX = 17.5;
-      const orbitRadiusZ = 14.5;
-      const orbitTiltX = 0.35;
-      const orbitTiltZ = -0.15;
+      const orbitRadiusX = 13.2;
+      const orbitRadiusZ = 10.8;
+      const orbitTiltX = 0.32;
+      const orbitTiltZ = -0.12;
 
       const createOrbitRing = () => {
         const curve = new THREE.EllipseCurve(0, 0, orbitRadiusX, orbitRadiusZ, 0, 2 * Math.PI, false, 0);
@@ -1344,16 +1284,17 @@
       const onResize = () => {
         const w = container.clientWidth;
         const h = container.clientHeight;
+        if (w === 0 || h === 0) return;
         camera.aspect = w / h;
-        if (w < 640) {
-          camera.position.z = 48;
-          centerGroup.scale.set(0.85, 0.85, 0.85);
-        } else if (w < 1024) {
-          camera.position.z = 42;
-          centerGroup.scale.set(0.95, 0.95, 0.95);
+        if (w < 400) {
+          camera.position.z = 36;
+          worldGroup.scale.set(0.85, 0.85, 0.85);
+        } else if (w < 600) {
+          camera.position.z = 32;
+          worldGroup.scale.set(0.95, 0.95, 0.95);
         } else {
-          camera.position.z = 38;
-          centerGroup.scale.set(1.0, 1.0, 1.0);
+          camera.position.z = 30;
+          worldGroup.scale.set(1.0, 1.0, 1.0);
         }
         camera.updateProjectionMatrix();
         renderer.setSize(w, h);
@@ -1369,14 +1310,8 @@
 
         curRotX += (targetRotX - curRotX) * 0.06;
         curRotY += (targetRotY - curRotY) * 0.06;
-        worldGroup.rotation.x = curRotX + parallaxY * 0.06;
-        worldGroup.rotation.y = curRotY + parallaxX * 0.1;
-
-        centerDisc.position.y = Math.sin(elapsedTime * 1.5) * 0.35;
-        centerHalo.rotation.z += delta * 0.2;
-        innerPulseRing.rotation.z -= delta * 0.15;
-        const pulse = 1 + Math.sin(elapsedTime * 2.2) * 0.03;
-        innerPulseRing.scale.set(pulse, pulse, pulse);
+        worldGroup.rotation.x = curRotX + parallaxY * 0.05;
+        worldGroup.rotation.y = curRotY + parallaxX * 0.08;
 
         const orbitSpeed = prefersReducedMotion ? 0.04 : 0.38;
         const globalOrbit = elapsedTime * orbitSpeed;
