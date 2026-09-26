@@ -15,8 +15,8 @@ export function ProjectsSection() {
           <div className="section-heading split-heading">
             <h2 id="work-heading">Engineered around the problem, not a generic template.</h2>
             <p>
-              Explore production-grade implementations spanning AI-powered healthcare portals,
-              high-volume WooCommerce architectures, dynamic relational directories, and automated conversational copilots.
+              Explore production-grade implementations spanning on-demand multi-city service platforms,
+              direct hospitality ordering, editorial luxury e-commerce, and automated conversational AI copilots.
             </p>
           </div>
         </Reveal>

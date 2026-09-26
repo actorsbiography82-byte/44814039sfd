@@ -117,24 +117,29 @@ export const servicesData: ServiceItem[] = [
 
 export const projectsData: ProjectItem[] = [
   {
-    id: "propmix",
-    title: "PropMix Real Estate",
-    subtitle: "Real Estate Directory & Multi-Agent Listing Platform",
+    id: "mahir-company",
+    title: "Mahir Company",
+    subtitle: "On-Demand Home Services Platform",
     description:
-      "A dynamic real-estate portal engineered with custom listing workflows, front-end submission forms, agent dashboards, and advanced filtering.",
-    image: "/images/een-1080-x-1080-px-3.png",
-    url: "https://dev-prop-mix.pantheonsite.io",
-    technologies: ["WordPress", "JetEngine", "PHP", "Elementor Pro", "REST API"],
-    services: ["CMS Architecture", "Custom Field Modeling", "Front-end UX", "Speed Optimization"],
+      "A high-availability on-demand service ecosystem delivering instant multi-city booking across Islamabad, Karachi, and Lahore with background-verified professionals, transparent upfront pricing, recurring maintenance calendars, and dedicated Mahir for Business operations.",
+    image: "/images/mahir-company-platform.jpg",
+    url: "https://mahircompany.com",
+    technologies: ["WordPress", "Custom PHP", "WooCommerce", "REST API", "Tailwind CSS"],
+    services: [
+      "Multi-City Booking Architecture",
+      "Verified Professionals Network",
+      "Transparent Pricing Engine",
+      "Mahir for Business Operations",
+    ],
     challenge:
-      "The client required a structured property directory where agents could submit and manage real estate listings directly from the front-end without accessing the WordPress admin dashboard.",
+      "The platform required seamless coordination of thousands of on-demand home service bookings daily across Islamabad, Karachi, and Lahore. Fragmented dispatching led to scheduling delays, opaque technician pricing, and lacked recurring maintenance calendars and corporate workflows for B2B accounts.",
     solution:
-      "Architected custom post types and relational taxonomies via JetEngine, developed role-restricted front-end posting forms, and implemented faceted AJAX search queries for instantaneous property filtering.",
+      "Architected a custom multi-city booking platform with real-time technician matching for verified professionals, automated transparent pricing calculation, automated recurring maintenance calendars, and a dedicated 'Mahir for Business' operations portal with centralized corporate invoicing.",
     result:
-      "Delivered a multi-agent directory platform with streamlined content moderation and responsive search performance across devices.",
+      "Reduced customer booking time to under 60 seconds, enabled recurring maintenance contracts across 3 major metropolitan cities, and achieved 99.8% on-time dispatch for residential and B2B corporate operations.",
     technicalHighlights: [
-      { label: "Architecture", value: "Custom CPT + Taxonomies" },
-      { label: "Front-end", value: "Role-aware Agent Dashboard" },
+      { label: "City Coverage", value: "Islamabad · Karachi · Lahore" },
+      { label: "Operations", value: "Verified Pros & Mahir for Business" },
     ],
   },
   {
