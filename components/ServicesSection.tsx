@@ -24,7 +24,7 @@ export function ServicesSection() {
             const Icon = service.icon;
             return (
               <Reveal key={service.title} delay={index * 0.05}>
-                <article className="service-card">
+                <article className="service-card group cursor-default">
                   <div className="service-card-header">
                     <div className="service-icon" aria-hidden="true">
                       <Icon size={20} />

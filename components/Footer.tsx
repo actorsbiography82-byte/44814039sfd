@@ -47,7 +47,7 @@ export function Footer() {
 
       <div className="section-shell footer-bottom">
         <span>© {currentYear} {siteConfig.name}. All rights reserved.</span>
-        <span>Designed for clarity · Engineered for performance</span>
+        <span>Architected for precision · Engineered for scale</span>
       </div>
     </footer>
   );

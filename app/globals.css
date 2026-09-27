@@ -717,23 +717,30 @@ button, a {
 }
 
 .service-card {
+  position: relative;
   padding: 36px;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--surface);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .service-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent-border);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+  border-color: rgba(40, 81, 65, 0.45);
+  background: linear-gradient(150deg, #ffffff 0%, #f4f8f5 60%, #eaf3ee 100%);
+  box-shadow: 0 18px 38px -8px rgba(20, 23, 22, 0.08), 0 0 0 1px rgba(40, 81, 65, 0.15), 0 0 24px -4px rgba(40, 81, 65, 0.12);
 }
 
-.service-card-top {
+.service-card-top,
+.service-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -748,6 +755,14 @@ button, a {
   border-radius: 10px;
   background: var(--accent-subtle);
   color: var(--accent);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover .service-icon {
+  background: var(--accent);
+  color: #ffffff;
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 6px 16px rgba(40, 81, 65, 0.25);
 }
 
 .service-card-number {
@@ -755,6 +770,17 @@ button, a {
   font-weight: 750;
   color: var(--text-subtle);
   letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(20, 23, 22, 0.03);
+  border: 1px solid transparent;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover .service-card-number {
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border-color: rgba(40, 81, 65, 0.2);
 }
 
 .service-card-title {
@@ -763,9 +789,15 @@ button, a {
   font-size: 21px;
   font-weight: 750;
   letter-spacing: -0.02em;
+  transition: color 0.25s ease;
 }
 
-.service-card p {
+.service-card:hover .service-card-title {
+  color: var(--accent);
+}
+
+.service-card p,
+.service-card-description {
   margin: 0 0 20px;
   color: var(--text-muted);
   font-size: 15px;
@@ -776,6 +808,11 @@ button, a {
   height: 1px;
   background: var(--border-subtle);
   margin: 0 0 18px;
+  transition: background-color 0.25s ease;
+}
+
+.service-card:hover .service-divider {
+  background: rgba(40, 81, 65, 0.14);
 }
 
 .service-deliverables-wrap {
