@@ -46,6 +46,12 @@ const getTechBadgeStyle = (tech: string) => {
       bg: "bg-amber-50 text-amber-900 border-amber-200/80",
     };
   }
+  if (t.includes("pantheon")) {
+    return {
+      dot: "bg-amber-600",
+      bg: "bg-amber-50 text-amber-950 border-amber-300/80",
+    };
+  }
   return {
     dot: "bg-stone-500",
     bg: "bg-stone-50 text-stone-800 border-stone-200",

@@ -16,7 +16,7 @@ export function ProjectsSection() {
             <h2 id="work-heading">Engineered around the problem, not a generic template.</h2>
             <p>
               Explore production-grade implementations spanning on-demand multi-city service platforms,
-              direct hospitality ordering, editorial luxury e-commerce, and automated conversational AI copilots.
+              multi-designer luxury marketplaces, editorial commerce, and automated conversational AI copilots.
             </p>
           </div>
         </Reveal>

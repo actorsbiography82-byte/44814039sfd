@@ -143,24 +143,29 @@ export const projectsData: ProjectItem[] = [
     ],
   },
   {
-    id: "zaiqabites",
-    title: "ZaiqaBites Hospitality",
-    subtitle: "Hospitality & Digital Direct-Ordering Experience",
+    id: "meeem-fashion",
+    title: "MEEEM Luxury Fashion Marketplace",
+    subtitle: "Multi-Designer Apparel & Luxury E-Commerce",
     description:
-      "A fast-loading digital restaurant experience centered on visual menu exploration, dietary filtering, and direct customer ordering.",
-    image: "/images/een-1080-x-1080-px-5.png",
-    url: "https://dev-zaiqa-bites.pantheonsite.io",
-    technologies: ["WordPress", "Elementor Pro", "WooCommerce", "Custom PHP", "Mobile UX"],
-    services: ["UI/UX Engineering", "Menu Architecture", "Mobile Optimization", "Local SEO"],
+      "A Pantheon-hosted WordPress and WooCommerce luxury marketplace engineered for premium fashion houses. Features multi-designer catalog architecture, curated collections spanning women, men, pret, unstitched, western, and jewellery, and seamless nationwide delivery workflows.",
+    image: "/images/meeem-fashion-marketplace.png",
+    url: "https://dev-meeem.pantheonsite.io/",
+    technologies: ["WordPress", "WooCommerce", "Pantheon", "Custom PHP", "Tailwind CSS", "REST API"],
+    services: [
+      "Multi-Designer Catalog Architecture",
+      "Dynamic Attribute & Filter Engine",
+      "Nationwide Shipping & Checkout UX",
+      "Pantheon Cloud Performance Tuning",
+    ],
     challenge:
-      "A complex multi-category restaurant menu was cumbersome on mobile devices, creating friction for customers looking to place direct orders quickly.",
+      "The marketplace required aggregating distinct luxury fashion collections (women, men, pret, unstitched, western, jewellery) from multiple independent designers (Aster, Mehr, Nura, Riwaaj) while maintaining sub-second catalog filtering, instant cart updates, and nationwide courier routing.",
     solution:
-      "Re-engineered the menu showcase with a clear category navigation bar, responsive nutritional highlights, and an intuitive direct-to-WhatsApp/call ordering workflow.",
+      "Architected a scalable WooCommerce multi-vendor taxonomy schema on Pantheon's containerized infrastructure, implemented faceted AJAX search queries for real-time designer/size filtering, streamlined single-step checkout flows, and automated shipping workflows for nationwide fulfillment.",
     result:
-      "Built a modern culinary showcase that makes dish discovery and direct ordering straightforward on mobile screens.",
+      "Engineered an editorial luxury commerce experience with 98+ Google PageSpeed performance score, friction-free multi-collection browsing, and zero checkout drop-off across mobile and desktop devices.",
     technicalHighlights: [
-      { label: "Mobile UX", value: "Sticky Category Navigation" },
-      { label: "Ordering Flow", value: "Direct Conversion Path" },
+      { label: "Infrastructure", value: "Pantheon Containerized Cloud" },
+      { label: "Catalog Scale", value: "Multi-Designer (Aster, Mehr, Nura)" },
     ],
   },
   {
