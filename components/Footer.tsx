@@ -23,11 +23,12 @@ export function Footer() {
         <div className="footer-links-grid">
           <div className="footer-links-column">
             <span>Navigation</span>
-            <a href="#services">Services</a>
-            <a href="#work">Case Studies</a>
-            <a href="#process">Process</a>
-            <a href="#about">About</a>
-            <a href="#faq">FAQ</a>
+            <a href="/#services">Services</a>
+            <a href="/#work">Case Studies</a>
+            <a href="/#process">Process</a>
+            <a href="/#about">About</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/tools/text-formatter">Text Formatter Tool</a>
           </div>
 
           <div className="footer-links-column">
